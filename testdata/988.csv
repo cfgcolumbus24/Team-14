@@ -1,0 +1,11 @@
+CallID,CallerAge,CallerGender,Date,Time,CallDuration,ReasonForCall,Outcome,ReferredService,AgentName
+988-001,25,Female,2024-10-30,14:35,15 minutes,Anxiety Attack,De-escalated,Local Counseling Center,Jessica Brown
+988-002,40,Male,2024-10-30,09:20,30 minutes,Suicidal Thoughts,Referred,Emergency Psychiatric Services,David Lee
+988-003,18,Non-Binary,2024-10-29,21:10,45 minutes,Depression,De-escalated,Youth Support Group,Alex Morgan
+988-004,32,Male,2024-10-29,12:45,20 minutes,Relationship Issues,Provided Resources,Community Mediation,Emily Davis
+988-005,67,Female,2024-10-28,16:05,25 minutes,Grief,Referred,Bereavement Counseling,Michael Smith
+988-006,54,Female,2024-10-28,10:30,35 minutes,Substance Abuse Crisis,Referred,Addiction Recovery Center,Sophia Clark
+988-007,21,Male,2024-10-27,22:15,10 minutes,Panic Attack,De-escalated,Breathing Techniques Guide,Liam Anderson
+988-008,29,Female,2024-10-27,18:00,40 minutes,Domestic Violence,Referred,Shelter and Legal Aid,Noah Wilson
+988-009,45,Male,2024-10-26,08:50,50 minutes,Suicidal Intentions,Transferred,Immediate Crisis Intervention,Olivia Lopez
+988-010,36,Non-Binary,2024-10-26,13:20,12 minutes,Work Stress,Provided Resources,Employee Assistance Program,Ethan Martinez

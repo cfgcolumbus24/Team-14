@@ -1,0 +1,9 @@
+TransactionID,Date,CustomerName,TransactionType,Amount,Account,PaymentMethod,InvoiceNumber,Notes
+QB-001,2024-10-01,John Doe,Invoice,500.00,Accounts Receivable,Credit Card,INV-1001,Payment due in 30 days
+QB-002,2024-10-03,Jane Smith,Payment,250.00,Accounts Payable,Bank Transfer,PAY-2001,Partial payment for services
+QB-003,2024-10-05,ABC Corp,Bill,1200.00,Expenses,Check,BILL-3001,Office supplies purchased
+QB-004,2024-10-08,XYZ Inc,Sales Receipt,300.00,Sales Revenue,Cash,SR-4001,Walk-in customer purchase
+QB-005,2024-10-10,Mary Johnson,Payment,800.00,Accounts Receivable,PayPal,INV-1002,Full payment received
+QB-006,2024-10-12,Acme LLC,Invoice,1500.00,Accounts Receivable,Credit Card,INV-1003,Consulting services rendered
+QB-007,2024-10-15,John Doe,Expense,75.00,Expenses,Debit Card,EXP-5001,Business lunch meeting
+QB-008,2024-10-18,Jane Smith,Refund,50.00,Sales Revenue,Bank Transfer,REF-6001,Refund for returned item

@@ -1,0 +1,26 @@
+PatientID,Age,Gender,Diagnosis,Medication,VisitDate,LabResult,Insurance
+PAT0001,25,Male,Asthma,Albuterol,2024-05-16,100.1,Uninsured
+PAT0002,54,Female,COPD,Lisinopril,2024-12-06,60.85,Medicare
+PAT0003,62,Female,COPD,Lisinopril,2024-07-30,50.98,Medicare
+PAT0004,57,Male,Hypertension,Atorvastatin,2024-07-09,115.3,Medicaid
+PAT0005,58,Female,COPD,Metformin,2024-04-01,70.92,Private
+PAT0006,54,Female,Asthma,Albuterol,2024-08-16,129.82,Uninsured
+PAT0007,37,Male,Diabetes,Lisinopril,2024-10-11,87.51,Uninsured
+PAT0008,54,Male,COPD,Atorvastatin,2024-06-09,101.15,Private
+PAT0009,68,Female,COPD,Aspirin,2024-08-22,68.27,Private
+PAT0010,90,Female,Hypertension,Lisinopril,2024-03-24,92.84,Medicaid
+PAT0011,70,Male,Heart Disease,Lisinopril,2024-05-14,103.81,Medicare
+PAT0012,49,Female,Asthma,Lisinopril,2024-03-08,90.42,Medicare
+PAT0013,69,Male,COPD,Aspirin,2024-12-02,111.9,Private
+PAT0014,66,Female,Diabetes,Albuterol,2024-03-04,81.0,Medicaid
+PAT0015,81,Female,Diabetes,Lisinopril,2024-01-05,130.47,Uninsured
+PAT0016,39,Male,Hypertension,Aspirin,2024-12-31,148.74,Medicaid
+PAT0017,81,Male,Hypertension,Aspirin,2024-12-01,110.41,Medicaid
+PAT0018,23,Male,COPD,Atorvastatin,2024-10-12,54.88,Medicaid
+PAT0019,54,Female,COPD,Atorvastatin,2024-09-20,130.22,Medicare
+PAT0020,29,Female,Hypertension,Atorvastatin,2024-01-07,65.11,Uninsured
+PAT0021,64,Male,COPD,Aspirin,2024-04-13,138.28,Medicaid
+PAT0022,27,Male,Asthma,Atorvastatin,2024-05-29,146.01,Medicare
+PAT0023,78,Female,Heart Disease,Albuterol,2024-02-05,64.72,Private
+PAT0024,88,Male,COPD,Lisinopril,2024-06-02,144.82,Uninsured
+PAT0025,31,Female,Asthma,Aspirin,2024-01-28,63.88,Private

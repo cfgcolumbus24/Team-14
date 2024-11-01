@@ -1,11 +1,19 @@
-import logo from "./logo.svg";
-import "./App.css";
+// src/App.js
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Dashboard from "./components/Dashboard";
+import CliniciansPage from "./components/Clinicians";
+import ITAdminPage from "./components/IT-Admin";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header"></header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/clinicians" element={<CliniciansPage />} />
+        <Route path="/it-admin" element={<ITAdminPage />} />
+      </Routes>
+    </Router>
   );
 }
 

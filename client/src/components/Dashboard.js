@@ -1,32 +1,31 @@
-// src/components/Dashboard.js
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import "../styles/Dashboard.css";
 
 function Dashboard() {
-  const navigate = useNavigate();
-
-  const handleMenuChange = (event) => {
-    const selectedPage = event.target.value;
-    if (selectedPage === "clinicians") {
-      navigate("/clinicians");
-    } else if (selectedPage === "it-admin") {
-      navigate("/it-admin");
-    }
-  };
-
   return (
-    <div>
-      <nav style={{ background: "#333", padding: "10px", color: "white" }}>
-        <h1 style={{ display: "inline", marginRight: "20px" }}>Dashboard</h1>
-        <select onChange={handleMenuChange} style={{ padding: "5px" }}>
-          <option value="">Select Page</option>
-          <option value="clinicians">Clinicians</option>
-          <option value="it-admin">IT-Admin</option>
-        </select>
-      </nav>
-      <div style={{ padding: "20px" }}>
-        <h2>Welcome to the Dashboard</h2>
-        <p>Select an option from the dropdown menu to navigate.</p>
+    <div className="dashboard-container">
+      <h1 className="dashboard-title">Clinician View</h1>
+
+      <div className="dashboard-grid">
+        {/*  First Row */}
+        <div className="dashboard-card">
+          <h2>Total Users</h2>
+          <p>15,234</p>
+        </div>
+        <div className="dashboard-card">
+          <h2>New Orders</h2>
+          <p>567</p>
+        </div>
+
+        {/* Second Row */}
+        <div className="dashboard-card">
+          <h2>Revenue</h2>
+          <p>$120,456</p>
+        </div>
+        <div className="dashboard-card">
+          <h2>Active Subscriptions</h2>
+          <p>8,976</p>
+        </div>
       </div>
     </div>
   );

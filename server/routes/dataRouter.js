@@ -2,8 +2,11 @@ import express from "express"
 
 const router = express.Router();
 
-router.get('/', getData)
+/* GET data */
+router.get('/', getData);
 
-router.get('/', getQuery)
+router.get('/', getQuery);
+
+
 
 export {router as dataRouter};

@@ -59,4 +59,67 @@ function Clinicians() {
    );
 }
 
+// Function to handle API call for button clicks
+  const handleButtonClick = async (buttonType) => {
+    try {
+      // Fetch data from the backend based on button type
+      const response = await fetch(`http://localhost:5000/api/data?type=${buttonType}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const result = await response.json();
+      console.log("Response from server:", result);
+      setFetchedData(result); // Store the fetched data in state
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  return (
+    <div>
+      <h2>Clinicians Page</h2>
+      <p>Welcome to the Clinicians dashboard section.</p>
+      <div style={{ width: "600px", margin: "auto" }}>
+        <Bar data={data} options={options} />
+      </div>
+
+      {/* Display fetched data from backend */}
+      {fetchedData && (
+        <div style={{ marginTop: "20px", textAlign: "center" }}>
+          <h3>Fetched Data:</h3>
+          <pre>{JSON.stringify(fetchedData, null, 2)}</pre>
+        </div>
+      )}
+
+      {/* Buttons section */}
+      <div style={{ marginTop: "20px", textAlign: "center" }}>
+        <button
+          onClick={() => handleButtonClick("EHR")}
+          style={{ margin: "5px" }}
+        >
+          EHR
+        </button>
+        <button
+          onClick={() => handleButtonClick("Mytel")}
+          style={{ margin: "5px" }}
+        >
+          Mytel
+        </button>
+        <button
+          onClick={() => handleButtonClick("QuickBooks")}
+          style={{ margin: "5px" }}
+        >
+          QuickBooks
+        </button>
+      </div>
+    </div>
+  );
+
 export default Clinicians;

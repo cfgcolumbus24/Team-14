@@ -61,13 +61,17 @@ function Clinicians() {
 
 // Function to handle API call for button clicks
   const handleButtonClick = async (buttonType) => {
+    const jsonData = {
+      type: buttonType,
+    };
+
     try {
-      // Fetch data from the backend based on button type
-      const response = await fetch(`http://localhost:5000/api/data?type=${buttonType}`, {
+      const response = await fetch("http://localhost:3001/api/data/", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
         },
+        body: JSON.stringify(jsonData),
       });
 
       if (!response.ok) {
@@ -76,9 +80,8 @@ function Clinicians() {
 
       const result = await response.json();
       console.log("Response from server:", result);
-      setFetchedData(result); // Store the fetched data in state
     } catch (error) {
-      console.error("Error fetching data:", error);
+      console.error("Error sending data:", error);
     }
   };
 
@@ -89,14 +92,6 @@ function Clinicians() {
       <div style={{ width: "600px", margin: "auto" }}>
         <Bar data={data} options={options} />
       </div>
-
-      {/* Display fetched data from backend */}
-      {fetchedData && (
-        <div style={{ marginTop: "20px", textAlign: "center" }}>
-          <h3>Fetched Data:</h3>
-          <pre>{JSON.stringify(fetchedData, null, 2)}</pre>
-        </div>
-      )}
 
       {/* Buttons section */}
       <div style={{ marginTop: "20px", textAlign: "center" }}>
@@ -121,5 +116,6 @@ function Clinicians() {
       </div>
     </div>
   );
+}
 
 export default Clinicians;

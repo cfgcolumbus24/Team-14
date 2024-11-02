@@ -41,3 +41,5 @@ const executeMongoQuery = async(dbName, collectionName, query) => {
         console.log("Connection closed");
     }
 }
+
+export {generateMongoQuery, executeMongoQuery}

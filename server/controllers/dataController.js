@@ -2,6 +2,10 @@ import express from "express"
 import testEHR from '../../testdata/test_ehr.json' with { type: 'json' };
 import { executeMongoQuery, generateMongoQuery } from "../services/langchain";
 
+
+const uri = "mongodb+srv://Victor:user1@reportingdata.t1ydb.mongodb.net/?retryWrites=true&w=majority&appName=ReportingData"
+const dbName = 'ReportingData';
+
 const getData = async (req, res) => {
     const client = new MongoClient(uri);
 
@@ -18,7 +22,8 @@ const getData = async (req, res) => {
         // Check if the collection exists
         const collectionExists = await db.listCollections({ name: collectionName }).hasNext();
         
-        if (!collectionExists) {
+        if (!collectionExists) {const uri = "mongodb+srv://Victor:user1@reportingdata.t1ydb.mongodb.net/?retryWrites=true&w=majority&appName=ReportingData"
+            const dbName = 'ReportingData';
             return res.status(500).json({ error: "Collection not found" });
         }
 

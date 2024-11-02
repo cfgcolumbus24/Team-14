@@ -1,6 +1,6 @@
 import express from "express"
-import dataRouter  from './routes/dataRouter';
-import  queryRouter from './routes/queryRouter';
+import dataRouter  from './routes/dataRouter.js';
+import  queryRouter from './routes/queryRouter.js';
 
 //set up the express dependency
 

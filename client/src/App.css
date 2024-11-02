@@ -32,12 +32,17 @@
 h1 {
   font-size: 2rem;
   font-weight: bold;
+  padding-top: 0.5em;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 .header-subtitle {
   font-size: 1rem;
   color: #e0e0e0;
-  margin-top: 5px;
+  margin-top: -2em;
+  padding-top: 0;
+  font-style: italic;
 }
 
 .app-main {

@@ -157,3 +157,52 @@ p {
   margin-right: 50px;
   margin-left: 50px;
 }
+
+/* Table Styling */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  color: #e0e0e0;
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+table {
+  table-layout: fixed; /* Ensure columns are aligned */
+  width: 100%;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  color: #e0e0e0;
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+th {
+  background-color: #333;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #2a2a2a;
+}
+
+tr:hover {
+  background-color: #444;
+}
+
+td {
+  border-bottom: 1px solid #555;
+}

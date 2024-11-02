@@ -1,15 +1,10 @@
 import express from "express"
 import testEHR from '../../testdata/test_ehr.json' with { type: 'json' };
-//mongo db stuff
-import { MongoClient } from 'mongodb';
-import dotenv from 'dotenv';
-dotenv.config();
+import { executeMongoQuery, generateMongoQuery } from "../services/langchain.js";
 
 
-//mongo db variables here
 const uri = "mongodb+srv://Victor:user1@reportingdata.t1ydb.mongodb.net/?retryWrites=true&w=majority&appName=ReportingData"
 const dbName = 'ReportingData';
-const collectionName = "products";
 
 const getData = async (req, res) => {
     const client = new MongoClient(uri);
@@ -27,7 +22,8 @@ const getData = async (req, res) => {
         // Check if the collection exists
         const collectionExists = await db.listCollections({ name: collectionName }).hasNext();
         
-        if (!collectionExists) {
+        if (!collectionExists) {const uri = "mongodb+srv://Victor:user1@reportingdata.t1ydb.mongodb.net/?retryWrites=true&w=majority&appName=ReportingData"
+            const dbName = 'ReportingData';
             return res.status(500).json({ error: "Collection not found" });
         }
 
@@ -45,9 +41,19 @@ const getData = async (req, res) => {
     }
 };
 
-const getQuery = async (req, res) => {
-    const {type, info} = req.body;
-    res.send('Data route');
+const postQuery = async (req, res) => {
+    try{
+        const { query } = req.body;
+        if (!query) {
+            return res.status(500).json({error:"Query required"})
+        }
+        const mongoQuery = await generateMongoQuery(query);
+        const results = await executeMongoQuery(results);
+        return res.status(200).json(results);
+    }catch(e){
+        return res.status(500).json({error:"Error processing Query"});
+    }
+    
 }
 
-export {getData, getQuery};
+export {getData, postQuery};

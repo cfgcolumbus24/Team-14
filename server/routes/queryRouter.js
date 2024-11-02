@@ -1,9 +1,9 @@
 import express from 'express'
-import {getQuery} from '../controllers/dataController.js';
+import {postQuery} from '../controllers/dataController.js';
 const router = express.Router();
 
 /* GET data */
-router.get('/', getQuery);
+router.post('/', postQuery);
 
 
 export {router as queryRouter};

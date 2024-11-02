@@ -49,31 +49,32 @@ function CliniciansVisuals() {
     count: diagnosisCounts[diagnosis],
   }));
  
-   return (
-     <div>
-       <h2>Clinicians Page</h2>
-       <p>Welcome to the Clinicians dashboard section.</p>
-       <div style={{ width: "600px", margin: "auto" }}>
-         <BarChart width={600} height={300} data={numPatients}>
-           <XAxis dataKey="name" />
-           <YAxis />
-           <Tooltip />
-           <CartesianGrid strokeDasharray="3 3" />
-           <Bar dataKey="count" fill="rgba(75, 192, 192, 0.6)" />
-         </BarChart>
-       </div>
-        <div style={{ width: "600px", margin: "auto" }}>
-          <BarChart width={600} height={300} data={diagnosisData}>
-            <XAxis dataKey="name" />
-            <YAxis />
-            <Tooltip />
-            <CartesianGrid strokeDasharray="3 3" />
-            <Bar dataKey="count" fill="rgba(75, 192, 192, 0.6)" />
-          </BarChart>
-       </div>
+  return (
+    <div>
+     <h2>Clinicians Page</h2>
+     <p>Welcome to the Clinicians dashboard section.</p>
+     <div style={{ display: "flex", justifyContent: "space-around" }}>
+      <div style={{ width: "600px" }}>
+        <BarChart width={600} height={300} data={numPatients}>
+         <XAxis dataKey="name" />
+         <YAxis />
+         <Tooltip />
+         <CartesianGrid strokeDasharray="3 3" />
+         <Bar dataKey="count" fill="rgba(75, 192, 192, 0.6)" />
+        </BarChart>
+      </div>
+      <div style={{ width: "600px" }}>
+        <BarChart width={600} height={300} data={diagnosisData}>
+         <XAxis dataKey="name" />
+         <YAxis />
+         <Tooltip />
+         <CartesianGrid strokeDasharray="3 3" />
+         <Bar dataKey="count" fill="rgba(75, 192, 192, 0.6)" />
+        </BarChart>
+      </div>
      </div>
-     
-   );
+    </div>
+  );
 }
 
 export default CliniciansVisuals;

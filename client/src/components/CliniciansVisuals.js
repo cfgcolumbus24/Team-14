@@ -120,6 +120,7 @@ function CliniciansVisuals(props) {
               textAnchor="middle"
               dominantBaseline="central"
               className="chart-title"
+              fill="#ffffff"
             >
               Patient Diagnoses
             </text>

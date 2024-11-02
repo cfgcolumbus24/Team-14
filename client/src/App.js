@@ -5,6 +5,7 @@ import CliniciansVisuals from "./components/CliniciansVisuals";
 import { useState } from "react";
 import Query from "./components/Query";
 import Button from "./components/Button";
+import ITAdmin from "./components/ITAdmin";
 
 function App() {
   // State to manage the selected component
@@ -37,14 +38,16 @@ function App() {
         <select id="component-select" onChange={handleDropdownChange}>
           <option value="Dashboard">Dashboard</option>
           <option value="EHR">Clinician</option>
-          <option value="Button">IT-Admin</option>
+          <option value="ITAdmin">IT-Admin</option>
         </select>
       </div>
 
       <main className="app-main">
         {/* Conditionally render components based on selected value */}
         {selectedComponent === "Dashboard" && <Dashboard />}
-        {selectedComponent === "EHR" && <CliniciansVisuals selectedComponent={selectedComponent}/>}
+        {selectedComponent === "EHR" && (
+          <CliniciansVisuals selectedComponent={selectedComponent} />
+        )}
         {selectedComponent === "ITAdmin" && <ITAdmin />}
       </main>
       <footer className="app-footer">

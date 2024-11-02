@@ -7,6 +7,10 @@ import {
   Tooltip,
   CartesianGrid,
   ResponsiveContainer,
+  PieChart,
+  Pie,
+  Cell,
+  Legend,
 } from "recharts";
 import "../styles/CliniciansVisuals.css";
 
@@ -58,6 +62,15 @@ function CliniciansVisuals(props) {
     }, {})
   ).map(([name, count]) => ({ name, count }));
 
+  const insuranceData = Object.entries(
+    filteredPatientData.reduce((acc, patient) => {
+      acc[patient.Insurance] = (acc[patient.Insurance] || 0) + 1;
+      return acc;
+    }, {})
+  ).map(([name, count]) => ({ name, count }));
+
+  const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
+
   const issueTypeData = Object.entries(
     mitelData.reduce((acc, call) => {
       acc[call.IssueType] = (acc[call.IssueType] || 0) + 1;
@@ -80,6 +93,12 @@ function CliniciansVisuals(props) {
           <h2>Patient Visits By Date</h2>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={visitDateData}>
+              <defs>
+                <linearGradient id="colorVisitDate" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#007bff" stopOpacity={0.8} />
+                  <stop offset="100%" stopColor="#00c6ff" stopOpacity={0.8} />
+                </linearGradient>
+              </defs>
               <XAxis
                 dataKey="name"
                 interval={0}
@@ -91,7 +110,7 @@ function CliniciansVisuals(props) {
               <YAxis />
               <Tooltip />
               <CartesianGrid strokeDasharray="3 3" />
-              <Bar dataKey="count" fill="#007bff" />
+              <Bar dataKey="count" fill="url(#colorVisitDate)" />
             </BarChart>
           </ResponsiveContainer>
         </div>
@@ -99,6 +118,12 @@ function CliniciansVisuals(props) {
           <h2>Patient Diagnoses</h2>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={diagnosisData}>
+              <defs>
+                <linearGradient id="colorDiagnosis" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#007bff" stopOpacity={0.8} />
+                  <stop offset="100%" stopColor="#00c6ff" stopOpacity={0.8} />
+                </linearGradient>
+              </defs>
               <XAxis
                 dataKey="name"
                 interval={0}
@@ -110,28 +135,37 @@ function CliniciansVisuals(props) {
               <YAxis />
               <Tooltip />
               <CartesianGrid strokeDasharray="3 3" />
-              <Bar dataKey="count" fill="#007bff" />
+              <Bar dataKey="count" fill="url(#colorDiagnosis)" />
             </BarChart>
           </ResponsiveContainer>
         </div>
         <div className="clinicians-visuals__card">
-          <h2>Mitel Calls By Issue Type</h2>
-          <ResponsiveContainer width="100%" height={300}>
-            <BarChart data={issueTypeData}>
-              <XAxis
-                dataKey="name"
-                interval={0}
-                angle={-45}
-                textAnchor="end"
-                tick={{ fontSize: 12 }}
-                height={100}
-              />
-              <YAxis />
-              <Tooltip />
-              <CartesianGrid strokeDasharray="3 3" />
-              <Bar dataKey="count" fill="#007bff" />
-            </BarChart>
-          </ResponsiveContainer>
+          <h2>Patient Insurance</h2>
+          <div style={{ width: "100%", height: 300 }}>
+            <ResponsiveContainer>
+              <PieChart>
+                <Pie
+                  data={insuranceData}
+                  dataKey="count"
+                  nameKey="name"
+                  cx="50%"
+                  cy="50%"
+                  innerRadius={60}
+                  outerRadius={100}
+                  label
+                >
+                  {insuranceData.map((entry, index) => (
+                    <Cell
+                      key={`cell-${index}`}
+                      fill={COLORS[index % COLORS.length]}
+                    />
+                  ))}
+                </Pie>
+                <Tooltip />
+                <Legend />
+              </PieChart>
+            </ResponsiveContainer>
+          </div>
         </div>
         <div className="clinicians-visuals__card">
           <h2>QuickBooks Invoices By Status</h2>

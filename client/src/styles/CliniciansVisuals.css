@@ -28,8 +28,8 @@ body {
   background-color: #2a2a2a;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-  padding: 20px;
   transition: transform 0.3s ease;
+  padding-right: 2em;
 }
 
 .clinicians-visuals__card:hover {
@@ -86,7 +86,7 @@ body {
   }
 }
 
-input{
+input {
   padding: 15px;
   display: block;
   margin: 0 auto;

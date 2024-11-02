@@ -61,6 +61,12 @@ function Dashboard() {
           <div>
             <ResponsiveContainer width="100%" height={400}>
               <BarChart data={ageGroupData}>
+                <defs>
+                  <linearGradient id="colorAge" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stopColor="#007bff" stopOpacity={0.8} />
+                    <stop offset="100%" stopColor="#00c6ff" stopOpacity={0.8} />
+                  </linearGradient>
+                </defs>
                 <XAxis dataKey="name">
                   <Label
                     value="Age Group"
@@ -72,7 +78,7 @@ function Dashboard() {
                 <YAxis />
                 <Tooltip />
                 <CartesianGrid strokeDasharray="3 3" />
-                <Bar dataKey="count" fill="#007bff" />
+                <Bar dataKey="count" fill="url(#colorAge)" />
               </BarChart>
             </ResponsiveContainer>
           </div>

@@ -66,15 +66,17 @@ p {
   border-color: #555 !important; /* Lighter tooltip border */
 }
 
-/* Mobile-friendly adjustments */
+/* Updated Mobile View Adjustments for Clinicians Page */
 @media (max-width: 768px) {
   .charts-grid {
     flex-direction: column;
     align-items: center;
+    gap: 15px; /* Reduce space between charts */
   }
 
   .chart-box {
-    max-width: 90%;
-    margin-bottom: 20px;
+    max-width: 90%; /* Restrict chart width to prevent overflow */
+    margin: 0 auto 20px; /* Center horizontally and add space below */
+    padding: 15px; /* Adjust padding for better fit */
   }
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid } from "recharts";
 import "../styles/CliniciansVisuals.css";
+import Button from "./Button";
 
 function CliniciansVisuals() {
   // Sample data as an array of objects
@@ -300,6 +301,7 @@ function CliniciansVisuals() {
         </div>
       </div>
     </div>
+   <Button />
   );
 }
 

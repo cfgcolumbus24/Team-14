@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import Dashboard from "./components/Dashboard";
-import Clinicians from "./components/Clinicians";
+import CliniciansVisuals from "./components/Clinicians";
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
       </header>
       <main className="app-main">
         <Dashboard />
-        <Clinicians />
+        <CliniciansVisuals />
       </main>
       <footer className="app-footer">
         <p>&copy; {new Date().getFullYear()} Netcare Access</p>

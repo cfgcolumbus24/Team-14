@@ -1,7 +1,7 @@
 import React from "react";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid } from "recharts";
 
-function Clinicians() {
+function CliniciansVisuals() {
   // Sample data as an array of objects
   const patientData = [
     { PatientID: "PAT0001", Age: 25, Gender: "Male", Diagnosis: "Asthma", Medication: "Albuterol", VisitDate: "2024-05-16", LabResult: 100.1, Insurance: "Uninsured" },
@@ -76,4 +76,4 @@ function Clinicians() {
    );
 }
 
-export default Clinicians;
+export default CliniciansVisuals;

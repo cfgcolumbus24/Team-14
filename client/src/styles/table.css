@@ -1,0 +1,31 @@
+table {
+    width: 75%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 25px;
+    text-align: left;
+}
+
+th {
+    color: #e0e0e0;
+    background-color: #333; /* Use a darker color for text to avoid white background */
+}
+
+table th:first-child, table td:first-child {
+    text-align: left;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+h2 {
+    text-align: center;
+}
+
+table th, table td {
+    width: 25%; /* Adjust this value based on the number of columns */
+    padding: 12px; /* Increase padding */
+}

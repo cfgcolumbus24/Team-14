@@ -116,6 +116,5 @@ function Clinicians() {
       </div>
     </div>
   );
-}
 
 export default Clinicians;

@@ -39,6 +39,7 @@ function App() {
           <option value="Dashboard">Dashboard</option>
           <option value="EHR">Clinician</option>
           <option value="ITAdmin">IT-Admin</option>
+          <option value="SearchBar">SearchBar</option>
         </select>
       </div>
 
@@ -49,6 +50,7 @@ function App() {
           <CliniciansVisuals selectedComponent={selectedComponent} />
         )}
         {selectedComponent === "ITAdmin" && <ITAdmin />}
+        {selectedComponent === "SeaarchBar" && <SearchBar />}
       </main>
       <footer className="app-footer">
         <p>&copy; {new Date().getFullYear()} Netcare Access</p>

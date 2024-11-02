@@ -11,9 +11,6 @@ const uri = "mongodb+srv://Victor:user1@reportingdata.t1ydb.mongodb.net/?retryWr
 const dbName = 'ReportingData';
 const collectionName = "products";
 
-
-const { MongoClient } = require('mongodb'); // Make sure to import MongoClient
-
 const getData = async (req, res) => {
     const client = new MongoClient(uri);
 

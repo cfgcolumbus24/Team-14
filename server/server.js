@@ -1,7 +1,7 @@
 import express from "express"
 import {dataRouter}  from './routes/dataRouter.js';
 import  {queryRouter} from './routes/queryRouter.js';
-import { getData } from "./controllers/dataController.js";
+import { postQuery } from "./controllers/dataController.js";
 //set up the express dependency
 
 //create an instance of express

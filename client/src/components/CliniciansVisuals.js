@@ -97,7 +97,7 @@ function CliniciansVisuals(props) {
       <h1 className="clinicians-visuals__title">Patient Data - At a Glance</h1>
       <div className="clinicians-visuals__grid">
         <div className="clinicians-visuals__card">
-          <h2>Patient Visits By Date</h2>
+          <h2>Recent Visits</h2>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={visitDateData}>
               <defs>
@@ -122,7 +122,7 @@ function CliniciansVisuals(props) {
           </ResponsiveContainer>
         </div>
         <div className="clinicians-visuals__card">
-          <h2>Patient Diagnoses</h2>
+          <h2>Diagnoses Summary</h2>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={diagnosisData}>
               <defs>
@@ -147,7 +147,7 @@ function CliniciansVisuals(props) {
           </ResponsiveContainer>
         </div>
         <div className="clinicians-visuals__card">
-          <h2>Patient Insurance</h2>
+          <h2>Insurance Distribution</h2>
           <div style={{ width: "100%", height: 300 }}>
             <ResponsiveContainer>
               <PieChart>
@@ -175,9 +175,15 @@ function CliniciansVisuals(props) {
           </div>
         </div>
         <div className="clinicians-visuals__card">
-          <h2>Patient Medications</h2>
+          <h2>Current Prescriptions</h2>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={medicationData}>
+              <defs>
+                <linearGradient id="colorMeds" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#007bff" stopOpacity={0.8} />
+                  <stop offset="100%" stopColor="#00c6ff" stopOpacity={0.8} />
+                </linearGradient>
+              </defs>
               <XAxis
                 dataKey="name"
                 interval={0}
@@ -189,7 +195,7 @@ function CliniciansVisuals(props) {
               <YAxis />
               <Tooltip />
               <CartesianGrid strokeDasharray="3 3" />
-              <Bar dataKey="count" fill="#007bff" />
+              <Bar dataKey="count" fill="url(#colorMeds)" />
             </BarChart>
           </ResponsiveContainer>
         </div>

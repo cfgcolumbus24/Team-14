@@ -52,7 +52,7 @@ function Dashboard() {
 
   return (
     <div className="dashboard-container">
-      <h1 className="dashboard-title">Our Impact</h1>
+      <h1 className="dashboard-title">Our Impact in 2023</h1>
 
       <div className="dashboard-grid">
         {/* Demographics */}

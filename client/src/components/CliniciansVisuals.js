@@ -84,10 +84,11 @@ function CliniciansVisuals(props) {
   }));
 
   return (
-    <div>
-      <h1>Patient Data - At a Glance</h1>
-      <div style={{ display: "flex", justifyContent: "space-around", flexWrap: "wrap" }}>
-        <div style={{ width: "600px", marginBottom: "20px" }}>
+    <div className="dashboard-container">
+      <h1 className="dashboard-title">Patient Data - At a Glance</h1>
+      <div className="dashboard-grid">
+        <div className="dashboard-card-bar">
+          <h2>Patient Visits By Date</h2>
           <BarChart width={600} height={300} data={visitDateData}>
             <XAxis dataKey="name" />
             <YAxis />
@@ -96,40 +97,33 @@ function CliniciansVisuals(props) {
             <Bar dataKey="count" fill="#007bff" />
           </BarChart>
         </div>
-        <div style={{ width: "600px", marginBottom: "20px" }}>
+        <div className="dashboard-card-bar">
           <BarChart width={600} height={300} data={diagnosisData}>
             <XAxis dataKey="name" interval={0} angle={-45} textAnchor="end" height={100} />
             <YAxis />
             <Tooltip />
             <CartesianGrid strokeDasharray="3 3" />
             <Bar dataKey="count" fill="#007bff" />
-            <text x={300} y={20} textAnchor="middle" dominantBaseline="central" className="chart-title" fill="#ffffff">
-              Patient Diagnoses
-            </text>
           </BarChart>
         </div>
-        <div style={{ width: "600px", marginBottom: "20px" }}>
+        <div className="dashboard-card-bar">
+          <h2>Mitel Calls By Issue Type</h2>
           <BarChart width={600} height={300} data={issueTypeData}>
             <XAxis dataKey="name" />
             <YAxis />
             <Tooltip />
             <CartesianGrid strokeDasharray="3 3" />
             <Bar dataKey="count" fill="#007bff" />
-            <text x={300} y={20} textAnchor="middle" dominantBaseline="central" className="chart-title" fill="#ffffff">
-              Mitel Calls by Issue Type
-            </text>
           </BarChart>
         </div>
-        <div style={{ width: "600px", marginBottom: "20px" }}>
+        <div className="dashboard-card-bar">
+          <h2>QuickBooks Invoices By Status</h2>
           <BarChart width={600} height={300} data={invoiceStatusData}>
             <XAxis dataKey="name" />
             <YAxis />
             <Tooltip />
             <CartesianGrid strokeDasharray="3 3" />
             <Bar dataKey="count" fill="#007bff" />
-            <text x={300} y={20} textAnchor="middle" dominantBaseline="central" className="chart-title" fill="#ffffff">
-              QuickBooks Invoices by Status
-            </text>
           </BarChart>
         </div>
       </div>

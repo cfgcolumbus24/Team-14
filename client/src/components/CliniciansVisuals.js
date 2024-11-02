@@ -316,7 +316,9 @@ function CliniciansVisuals() {
           </BarChart>
         </div>
       </div>
+      <Button />
     </div>
+    
   );
 }
 

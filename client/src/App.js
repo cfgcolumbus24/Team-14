@@ -30,11 +30,22 @@ function App() {
           </p>
         </div>
       </header>
+      <div
+        className="dropdown-container"
+        style={{ textAlign: "center", margin: "20px" }}
+      >
+        <label htmlFor="component-select">Choose a section: </label>
+        <select id="component-select" onChange={handleDropdownChange}>
+          <option value="Dashboard">Dashboard</option>
+          <option value="CliniciansVisuals">Clinicians Visuals</option>
+          <option value="Button">IT-Admin</option>
+        </select>
+      </div>
+
       <main className="app-main">
-        <Dashboard />
-        <CliniciansVisuals />
-        <Button />
-        <Query />
+        {/* Conditionally render components based on selected value */}
+        {selectedComponent === "Dashboard" && <Dashboard />}
+        {selectedComponent === "CliniciansVisuals" && <CliniciansVisuals />}
       </main>
       <footer className="app-footer">
         <p>&copy; {new Date().getFullYear()} Netcare Access</p>

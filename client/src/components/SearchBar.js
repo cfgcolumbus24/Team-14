@@ -22,7 +22,7 @@ function SearchBar() {
       <div className="output-area">
         <h2>{outputText}</h2>
       </div>
-      <form onSubmit={handleSearch} className="dashboard-card-bar">
+      <form onSubmit={handleSearch}>
         <input
           type="text"
           value={searchTerm}
@@ -30,7 +30,6 @@ function SearchBar() {
           placeholder="Search..."
           className="search-input"
         />
-        <button type="submit" className="submit-button">Submit</button>
       </form>
     </div>
   );

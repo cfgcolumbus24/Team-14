@@ -37,7 +37,7 @@ function App() {
       >
         <label htmlFor="component-select">View: </label>
         <select id="component-select" onChange={handleDropdownChange}>
-          <option value="Dashboard">Dashboard</option>
+          <option value="Dashboard">Impact Report</option>
           <option value="EHR">Clinician</option>
           <option value="ITAdmin">Admin</option>
           <option value="SearchBar">Search Query</option>

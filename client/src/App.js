@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import Dashboard from "./components/Dashboard";
 import CliniciansVisuals from "./components/CliniciansVisuals";
-import ButtonAPICall from "./components/Button";
+import Button from "./components/Button";
 
 function App() {
   return (

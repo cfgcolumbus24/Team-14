@@ -1,5 +1,5 @@
 import React from "react";
-function ButtonAPICall() {
+function Button() {
   // Function to handle API call for button clicks
   const handleButtonClick = async (buttonType) => {
     const jsonData = {
@@ -30,9 +30,6 @@ function ButtonAPICall() {
     <div>
       <h2>Clinicians Page</h2>
       <p>Welcome to the Clinicians dashboard section.</p>
-      <div style={{ width: "600px", margin: "auto" }}>
-        <Bar data={data} options={options} />
-      </div>
 
       {/* Buttons section */}
       <div style={{ marginTop: "20px", textAlign: "center" }}>
@@ -59,4 +56,4 @@ function ButtonAPICall() {
   );
 }
 
-export default Clinicians;
+export default Button;

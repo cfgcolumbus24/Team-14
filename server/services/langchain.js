@@ -7,7 +7,7 @@ import { MongoClient } from 'mongodb';
 
 console.log('Loaded API Key:', process.env["OPENAI_API_KEY"]); // Debugging log
 const chatModel = new ChatOpenAI({
-    apiKey: "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"
+    apiKey: "OPENAI_API_KEY",
 });
 
 const generateMongoQuery = async(naturalQuery) => {

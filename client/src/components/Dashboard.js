@@ -4,7 +4,7 @@ import "../styles/Dashboard.css";
 function Dashboard() {
   return (
     <div className="dashboard-container">
-      <h1 className="dashboard-title">Clinician View</h1>
+      <h1 className="dashboard-title">By the Numbers</h1>
 
       <div className="dashboard-grid">
         {/*  First Row */}

@@ -7,10 +7,11 @@ body {
   background-color: #121212; /* Dark background color */
 }
 
-h2 {
+h1 {
   text-align: center;
   color: #e0e0e0; /* Light text color */
-  margin-top: 20px;
+  margin-top: 0px;
+  margin-bottom: 50px;
 }
 
 p {
@@ -76,5 +77,11 @@ p {
   .chart-box {
     max-width: 90%;
     margin-bottom: 20px;
+  }
+
+  .chart-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    fill: #e0e0e0; /* Light text color for dark mode */
   }
 }

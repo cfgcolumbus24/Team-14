@@ -85,8 +85,6 @@ function ITAdmin() {
     count: invoiceStatusCounts[status],
   }));
 
-
-
   return (
       <div className="table-container">
         <div>

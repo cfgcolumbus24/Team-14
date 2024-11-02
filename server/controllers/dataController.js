@@ -1,10 +1,9 @@
-import express from express;
-
-const testEHR = require('../data/testData.json');
+import express from "express"
+import testEHR from '../../testdata/test_ehr.json' assert { type: 'json' };
 
 const getData = async (req, res) => {
     try {
-        const {type} = req.body;
+        const type = req.query.type;
         if (type === 'EHR') {
             res.send(testEHR);
         } else if (type === 'Mytel') {
@@ -23,3 +22,5 @@ const getQuery = async (req, res) => {
     const {type, info} = req.body;
     res.send('Data route');
 }
+
+export {getData, getQuery};

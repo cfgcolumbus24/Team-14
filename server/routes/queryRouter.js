@@ -3,7 +3,7 @@ import {getQuery} from '../controllers/dataController.js';
 const router = express.Router();
 
 /* GET data */
-router.get('/', getQuery);
+router.post('/', postQuery);
 
 
 export {router as queryRouter};

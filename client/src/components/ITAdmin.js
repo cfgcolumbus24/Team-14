@@ -1,7 +1,7 @@
 // src/components/ITAdminPage.js
 import React from "react";
 
-function ITAdminPage() {
+function ITAdmin() {
   return (
     <div>
       <h2>IT-Admin Page</h2>

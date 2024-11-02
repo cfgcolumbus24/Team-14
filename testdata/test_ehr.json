@@ -1,252 +1,277 @@
 [
-    {
-      "CallID": "CALL0001",
-      "CallerAge": 18,
-      "CallerGender": "Female",
-      "CallDate": "2024-02-02",
-      "CallDuration": 30.83,
-      "IssueType": "Anxiety",
-      "Outcome": "Referred",
-      "CounselorID": "COU0001"
-    },
-    {
-      "CallID": "CALL0002",
-      "CallerAge": 73,
-      "CallerGender": "Female",
-      "CallDate": "2024-04-17",
-      "CallDuration": 7.51,
-      "IssueType": "Domestic Violence",
-      "Outcome": "Referred",
-      "CounselorID": "COU0002"
-    },
-    {
-      "CallID": "CALL0003",
-      "CallerAge": 41,
-      "CallerGender": "Female",
-      "CallDate": "2024-11-16",
-      "CallDuration": 45.87,
-      "IssueType": "Anxiety",
-      "Outcome": "Resolved",
-      "CounselorID": "COU0003"
-    },
-    {
-      "CallID": "CALL0004",
-      "CallerAge": 29,
-      "CallerGender": "Non-Binary",
-      "CallDate": "2024-06-29",
-      "CallDuration": 19.45,
-      "IssueType": "Suicidal Ideation",
-      "Outcome": "Referred",
-      "CounselorID": "COU0004"
-    },
-    {
-      "CallID": "CALL0005",
-      "CallerAge": 79,
-      "CallerGender": "Female",
-      "CallDate": "2024-11-10",
-      "CallDuration": 46,
-      "IssueType": "Domestic Violence",
-      "Outcome": "Referred",
-      "CounselorID": "COU0005"
-    },
-    {
-      "CallID": "CALL0006",
-      "CallerAge": 28,
-      "CallerGender": "Non-Binary",
-      "CallDate": "2024-03-07",
-      "CallDuration": 50.72,
-      "IssueType": "Substance Abuse",
-      "Outcome": "Resolved",
-      "CounselorID": "COU0006"
-    },
-    {
-      "CallID": "CALL0007",
-      "CallerAge": 33,
-      "CallerGender": "Female",
-      "CallDate": "2024-01-10",
-      "CallDuration": 25.71,
-      "IssueType": "Anxiety",
-      "Outcome": "Follow-up Needed",
-      "CounselorID": "COU0007"
-    },
-    {
-      "CallID": "CALL0008",
-      "CallerAge": 46,
-      "CallerGender": "Prefer not to say",
-      "CallDate": "2024-09-15",
-      "CallDuration": 19.44,
-      "IssueType": "Domestic Violence",
-      "Outcome": "Follow-up Needed",
-      "CounselorID": "COU0008"
-    },
-    {
-      "CallID": "CALL0009",
-      "CallerAge": 70,
-      "CallerGender": "Non-Binary",
-      "CallDate": "2024-12-05",
-      "CallDuration": 38.62,
-      "IssueType": "Anxiety",
-      "Outcome": "Resolved",
-      "CounselorID": "COU0009"
-    },
-    {
-      "CallID": "CALL0010",
-      "CallerAge": 42,
-      "CallerGender": "Non-Binary",
-      "CallDate": "2024-08-16",
-      "CallDuration": 11.29,
-      "IssueType": "Suicidal Ideation",
-      "Outcome": "Resolved",
-      "CounselorID": "COU0010"
-    },
-    {
-      "CallID": "CALL0011",
-      "CallerAge": 67,
-      "CallerGender": "Male",
-      "CallDate": "2024-08-18",
-      "CallDuration": 54.54,
-      "IssueType": "Substance Abuse",
-      "Outcome": "Resolved",
-      "CounselorID": "COU0011"
-    },
-    {
-      "CallID": "CALL0012",
-      "CallerAge": 38,
-      "CallerGender": "Prefer not to say",
-      "CallDate": "2024-12-23",
-      "CallDuration": 19.53,
-      "IssueType": "Substance Abuse",
-      "Outcome": "Resolved",
-      "CounselorID": "COU0012"
-    },
-    {
-      "CallID": "CALL0013",
-      "CallerAge": 71,
-      "CallerGender": "Male",
-      "CallDate": "2024-01-30",
-      "CallDuration": 47.25,
-      "IssueType": "Anxiety",
-      "Outcome": "Follow-up Needed",
-      "CounselorID": "COU0013"
-    },
-    {
-      "CallID": "CALL0014",
-      "CallerAge": 42,
-      "CallerGender": "Male",
-      "CallDate": "2024-11-27",
-      "CallDuration": 48.27,
-      "IssueType": "Suicidal Ideation",
-      "Outcome": "Follow-up Needed",
-      "CounselorID": "COU0014"
-    },
-    {
-      "CallID": "CALL0015",
-      "CallerAge": 69,
-      "CallerGender": "Male",
-      "CallDate": "2024-12-01",
-      "CallDuration": 6.74,
-      "IssueType": "Mental Health Crisis",
-      "Outcome": "Resolved",
-      "CounselorID": "COU0015"
-    },
-    {
-      "CallID": "CALL0016",
-      "CallerAge": 24,
-      "CallerGender": "Female",
-      "CallDate": "2024-01-29",
-      "CallDuration": 54.49,
-      "IssueType": "Mental Health Crisis",
-      "Outcome": "Referred",
-      "CounselorID": "COU0016"
-    },
-    {
-      "CallID": "CALL0017",
-      "CallerAge": 59,
-      "CallerGender": "Female",
-      "CallDate": "2024-02-09",
-      "CallDuration": 41.36,
-      "IssueType": "Mental Health Crisis",
-      "Outcome": "Resolved",
-      "CounselorID": "COU0017"
-    },
-    {
-      "CallID": "CALL0018",
-      "CallerAge": 69,
-      "CallerGender": "Prefer not to say",
-      "CallDate": "2024-11-04",
-      "CallDuration": 57.99,
-      "IssueType": "Domestic Violence",
-      "Outcome": "Referred",
-      "CounselorID": "COU0018"
-    },
-    {
-      "CallID": "CALL0019",
-      "CallerAge": 24,
-      "CallerGender": "Prefer not to say",
-      "CallDate": "2024-05-04",
-      "CallDuration": 10.88,
-      "IssueType": "Domestic Violence",
-      "Outcome": "Follow-up Needed",
-      "CounselorID": "COU0019"
-    },
-    {
-      "CallID": "CALL0020",
-      "CallerAge": 41,
-      "CallerGender": "Non-Binary",
-      "CallDate": "2024-01-08",
-      "CallDuration": 44.42,
-      "IssueType": "Mental Health Crisis",
-      "Outcome": "Referred",
-      "CounselorID": "COU0020"
-    },
-    {
-      "CallID": "CALL0021",
-      "CallerAge": 73,
-      "CallerGender": "Prefer not to say",
-      "CallDate": "2024-07-19",
-      "CallDuration": 6.68,
-      "IssueType": "Suicidal Ideation",
-      "Outcome": "Resolved",
-      "CounselorID": "COU0021"
-    },
-    {
-      "CallID": "CALL0022",
-      "CallerAge": 47,
-      "CallerGender": "Prefer not to say",
-      "CallDate": "2024-07-17",
-      "CallDuration": 49.06,
-      "IssueType": "Substance Abuse",
-      "Outcome": "Referred",
-      "CounselorID": "COU0022"
-    },
-    {
-      "CallID": "CALL0023",
-      "CallerAge": 78,
-      "CallerGender": "Female",
-      "CallDate": "2024-10-06",
-      "CallDuration": 44.35,
-      "IssueType": "Domestic Violence",
-      "Outcome": "Resolved",
-      "CounselorID": "COU0023"
-    },
-    {
-      "CallID": "CALL0024",
-      "CallerAge": 44,
-      "CallerGender": "Prefer not to say",
-      "CallDate": "2024-01-29",
-      "CallDuration": 54.29,
-      "IssueType": "Anxiety",
-      "Outcome": "Follow-up Needed",
-      "CounselorID": "COU0024"
-    },
-    {
-      "CallID": "CALL0025",
-      "CallerAge": 47,
-      "CallerGender": "Male",
-      "CallDate": "2024-04-20",
-      "CallDuration": 55.78,
-      "IssueType": "Suicidal Ideation",
-      "Outcome": "Referred",
-      "CounselorID": "COU0025"
-    }
-  ]
+  {
+    "PatientID": "PAT0001",
+    "Age": 25,
+    "Gender": "Male",
+    "Diagnosis": "Depression",
+    "Medication": "Sertraline",
+    "StartVisitDate": "2024-05-16",
+    "EndVisitDate": "2024-05-21",
+    "LabResult": 100.1,
+    "Insurance": "Uninsured"
+  },
+  {
+    "PatientID": "PAT0002",
+    "Age": 54,
+    "Gender": "Female",
+    "Diagnosis": "Anxiety",
+    "Medication": "Fluoxetine",
+    "StartVisitDate": "2024-05-16",
+    "EndVisitDate": "2024-05-21",
+    "LabResult": 60.85,
+    "Insurance": "Medicare"
+  },
+  {
+    "PatientID": "PAT0003",
+    "Age": 62,
+    "Gender": "Female",
+    "Diagnosis": "Depression",
+    "Medication": "Lithium",
+    "StartVisitDate": "2024-07-30",
+    "EndVisitDate": "2024-08-04",
+    "LabResult": 50.98,
+    "Insurance": "Medicare"
+  },
+  {
+    "PatientID": "PAT0004",
+    "Age": 57,
+    "Gender": "Male",
+    "Diagnosis": "Schizophrenia",
+    "Medication": "Risperidone",
+    "StartVisitDate": "2024-07-30",
+    "EndVisitDate": "2024-08-04",
+    "LabResult": 115.3,
+    "Insurance": "Medicaid"
+  },
+  {
+    "PatientID": "PAT0005",
+    "Age": 58,
+    "Gender": "Female",
+    "Diagnosis": "PTSD",
+    "Medication": "Paroxetine",
+    "StartVisitDate": "2024-04-01",
+    "EndVisitDate": "2024-04-06",
+    "LabResult": 70.92,
+    "Insurance": "Private"
+  },
+  {
+    "PatientID": "PAT0006",
+    "Age": 54,
+    "Gender": "Female",
+    "Diagnosis": "OCD",
+    "Medication": "Clomipramine",
+    "StartVisitDate": "2024-04-01",
+    "EndVisitDate": "2024-04-06",
+    "LabResult": 129.82,
+    "Insurance": "Uninsured"
+  },
+  {
+    "PatientID": "PAT0007",
+    "Age": 37,
+    "Gender": "Male",
+    "Diagnosis": "Depression",
+    "Medication": "Sertraline",
+    "StartVisitDate": "2024-10-11",
+    "EndVisitDate": "2024-10-16",
+    "LabResult": 87.51,
+    "Insurance": "Uninsured"
+  },
+  {
+    "PatientID": "PAT0008",
+    "Age": 54,
+    "Gender": "Male",
+    "Diagnosis": "Anxiety",
+    "Medication": "Fluoxetine",
+    "StartVisitDate": "2024-10-11",
+    "EndVisitDate": "2024-10-16",
+    "LabResult": 101.15,
+    "Insurance": "Private"
+  },
+  {
+    "PatientID": "PAT0009",
+    "Age": 68,
+    "Gender": "Female",
+    "Diagnosis": "Anxiety",
+    "Medication": "Lithium",
+    "StartVisitDate": "2024-08-22",
+    "EndVisitDate": "2024-08-27",
+    "LabResult": 68.27,
+    "Insurance": "Private"
+  },
+  {
+    "PatientID": "PAT0010",
+    "Age": 90,
+    "Gender": "Female",
+    "Diagnosis": "Schizophrenia",
+    "Medication": "Risperidone",
+    "StartVisitDate": "2024-08-22",
+    "EndVisitDate": "2024-08-27",
+    "LabResult": 92.84,
+    "Insurance": "Medicaid"
+  },
+  {
+    "PatientID": "PAT0011",
+    "Age": 70,
+    "Gender": "Male",
+    "Diagnosis": "PTSD",
+    "Medication": "Paroxetine",
+    "StartVisitDate": "2024-05-14",
+    "EndVisitDate": "2024-05-19",
+    "LabResult": 103.81,
+    "Insurance": "Medicare"
+  },
+  {
+    "PatientID": "PAT0012",
+    "Age": 49,
+    "Gender": "Female",
+    "Diagnosis": "OCD",
+    "Medication": "Clomipramine",
+    "StartVisitDate": "2024-05-14",
+    "EndVisitDate": "2024-05-19",
+    "LabResult": 90.42,
+    "Insurance": "Medicare"
+  },
+  {
+    "PatientID": "PAT0013",
+    "Age": 69,
+    "Gender": "Male",
+    "Diagnosis": "Depression",
+    "Medication": "Sertraline",
+    "StartVisitDate": "2024-12-02",
+    "EndVisitDate": "2024-12-07",
+    "LabResult": 111.9,
+    "Insurance": "Private"
+  },
+  {
+    "PatientID": "PAT0014",
+    "Age": 66,
+    "Gender": "Female",
+    "Diagnosis": "Anxiety",
+    "Medication": "Fluoxetine",
+    "StartVisitDate": "2024-12-02",
+    "EndVisitDate": "2024-12-07",
+    "LabResult": 81.0,
+    "Insurance": "Medicaid"
+  },
+  {
+    "PatientID": "PAT0015",
+    "Age": 81,
+    "Gender": "Female",
+    "Diagnosis": "Anxiety",
+    "Medication": "Lithium",
+    "StartVisitDate": "2024-01-05",
+    "EndVisitDate": "2024-01-10",
+    "LabResult": 130.47,
+    "Insurance": "Uninsured"
+  },
+  {
+    "PatientID": "PAT0016",
+    "Age": 39,
+    "Gender": "Male",
+    "Diagnosis": "Schizophrenia",
+    "Medication": "Risperidone",
+    "StartVisitDate": "2024-01-05",
+    "EndVisitDate": "2024-01-10",
+    "LabResult": 148.74,
+    "Insurance": "Medicaid"
+  },
+  {
+    "PatientID": "PAT0017",
+    "Age": 81,
+    "Gender": "Male",
+    "Diagnosis": "PTSD",
+    "Medication": "Paroxetine",
+    "StartVisitDate": "2024-12-01",
+    "EndVisitDate": "2024-12-06",
+    "LabResult": 110.41,
+    "Insurance": "Medicaid"
+  },
+  {
+    "PatientID": "PAT0018",
+    "Age": 23,
+    "Gender": "Male",
+    "Diagnosis": "OCD",
+    "Medication": "Clomipramine",
+    "StartVisitDate": "2024-12-01",
+    "EndVisitDate": "2024-12-06",
+    "LabResult": 54.88,
+    "Insurance": "Medicaid"
+  },
+  {
+    "PatientID": "PAT0019",
+    "Age": 54,
+    "Gender": "Female",
+    "Diagnosis": "Depression",
+    "Medication": "Sertraline",
+    "StartVisitDate": "2024-09-20",
+    "EndVisitDate": "2024-09-25",
+    "LabResult": 130.22,
+    "Insurance": "Medicare"
+  },
+  {
+    "PatientID": "PAT0020",
+    "Age": 29,
+    "Gender": "Female",
+    "Diagnosis": "Anxiety",
+    "Medication": "Fluoxetine",
+    "StartVisitDate": "2024-09-20",
+    "EndVisitDate": "2024-09-25",
+    "LabResult": 65.11,
+    "Insurance": "Uninsured"
+  },
+  {
+    "PatientID": "PAT0021",
+    "Age": 64,
+    "Gender": "Male",
+    "Diagnosis": "Anxiety",
+    "Medication": "Lithium",
+    "StartVisitDate": "2024-04-13",
+    "EndVisitDate": "2024-04-18",
+    "LabResult": 138.28,
+    "Insurance": "Medicaid"
+  },
+  {
+    "PatientID": "PAT0022",
+    "Age": 27,
+    "Gender": "Male",
+    "Diagnosis": "Schizophrenia",
+    "Medication": "Risperidone",
+    "StartVisitDate": "2024-04-13",
+    "EndVisitDate": "2024-04-18",
+    "LabResult": 146.01,
+    "Insurance": "Medicare"
+  },
+  {
+    "PatientID": "PAT0023",
+    "Age": 78,
+    "Gender": "Female",
+    "Diagnosis": "PTSD",
+    "Medication": "Paroxetine",
+    "StartVisitDate": "2024-02-05",
+    "EndVisitDate": "2024-02-10",
+    "LabResult": 64.72,
+    "Insurance": "Private"
+  },
+  {
+    "PatientID": "PAT0024",
+    "Age": 88,
+    "Gender": "Male",
+    "Diagnosis": "OCD",
+    "Medication": "Clomipramine",
+    "StartVisitDate": "2024-02-05",
+    "EndVisitDate": "2024-02-10",
+    "LabResult": 144.82,
+    "Insurance": "Uninsured"
+  },
+  {
+    "PatientID": "PAT0025",
+    "Age": 31,
+    "Gender": "Female",
+    "Diagnosis": "Depression",
+    "Medication": "Sertraline",
+    "StartVisitDate": "2024-01-28",
+    "EndVisitDate": "2024-02-02",
+    "LabResult": 63.88,
+    "Insurance": "Private"
+  }
+]

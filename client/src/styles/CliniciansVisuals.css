@@ -3,20 +3,20 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  color: #333;
-  background-color: #f4f4f9;
+  color: #e0e0e0; /* Light text color for contrast */
+  background-color: #121212; /* Dark background color */
 }
 
 h2 {
   text-align: center;
-  color: #4c4c6d;
+  color: #e0e0e0; /* Light text color */
   margin-top: 20px;
 }
 
 p {
   text-align: center;
   font-size: 1.1em;
-  color: #666;
+  color: #aeaeae; /* Slightly less bright text color */
 }
 
 /* Container for the dashboard */
@@ -36,9 +36,9 @@ p {
 }
 
 .chart-box {
-  background-color: #fff;
+  background-color: #2a2a2a; /* Dark background for the chart boxes */
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* More prominent shadow */
   overflow: hidden;
   padding: 20px;
   max-width: 600px;
@@ -49,6 +49,21 @@ p {
 
 .chart-box:hover {
   transform: translateY(-5px);
+  background-color: #333; /* Slightly lighter background on hover */
+}
+
+/* Recharts styling for dark mode */
+.recharts-text {
+  fill: #e0e0e0 !important; /* Light text color for chart elements */
+}
+
+.recharts-cartesian-grid line {
+  stroke: #555 !important; /* Lighter grid lines */
+}
+
+.recharts-tooltip-wrapper {
+  background-color: #333 !important; /* Darker tooltip background */
+  border-color: #555 !important; /* Lighter tooltip border */
 }
 
 /* Mobile-friendly adjustments */

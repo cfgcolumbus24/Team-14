@@ -5,10 +5,12 @@
 }
 
 .dashboard-title {
+  margin-top: 0;
   text-align: center;
   margin-bottom: 20px;
   font-size: 1.8rem;
   font-weight: bold;
+  color: #e0e0e0; /* Light text color */
 }
 
 .dashboard-grid {
@@ -18,24 +20,25 @@
 }
 
 .dashboard-card {
-  background-color: #f9f9f9;
+  background-color: #2a2a2a; /* Off-white background for tiles */
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* More prominent shadow */
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .dashboard-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Stronger shadow on hover */
+  background-color: #333; /* Slightly lighter background on hover */
 }
 
 .dashboard-card h2 {
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 10px;
-  color: #333;
+  color: #e0e0e0; /* Light text color */
 }
 
 .dashboard-card p {

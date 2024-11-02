@@ -7,11 +7,10 @@ const getData = async (req, res) => {
         if (type === 'EHR') {
             res.send(testEHR);
         } else if (type === 'Mytel') {
-            //res.send('Phone data');
+            res.send('not implemented yet');
         } else if (type === 'quickBooks') {
-            //res.send('Phone data');
-        } else if (type === '')
-        res.send('Data route');
+            res.send('not implemented yet');
+        }
     } catch (err) {
         console.log(err);
         res.send('An error occurred');

@@ -12,35 +12,41 @@ const dbName = 'ReportingData';
 const collectionName = "products";
 
 
+const { MongoClient } = require('mongodb'); // Make sure to import MongoClient
+
 const getData = async (req, res) => {
     const client = new MongoClient(uri);
 
     try {
         await client.connect();
         console.log('Connected to MongoDB database');
+        
         const db = client.db(dbName);
         const type = req.query.type;
 
-        /* determine collection */
-
-        let collectionName = type + "_collection";
-        const collection = await db.listCollections({name: collectionName}).toArray();
-
-        if (collection.length === 0) {
-            res.status(500).send('Collection not found').json({error: "Collection not found"});
+        // Determine collection name
+        const collectionName = `${type}_collection`;
+        
+        // Check if the collection exists
+        const collectionExists = await db.listCollections({ name: collectionName }).hasNext();
+        
+        if (!collectionExists) {
+            return res.status(404).json({ error: "Collection not found" });
         }
 
+        // Retrieve data from the existing collection
         const data = await db.collection(collectionName).find({}).toArray();
 
         return res.status(200).json(data);
+
     } catch (err) {
-        console.log(err);
-        return res.status(500).send('An error occurred');
+        console.error(err);
+        return res.status(500).json({ error: 'An error occurred' });
     } finally {
         await client.close();
         console.log('MongoDB connection closed');
     }
-}
+};
 
 const getQuery = async (req, res) => {
     const {type, info} = req.body;

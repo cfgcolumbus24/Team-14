@@ -1,0 +1,252 @@
+[
+    {
+        "EmployeeID": "EMP0001",
+        "Name": "Employee_1",
+        "Age": 25,
+        "Department": "Sales",
+        "Position": "Analyst",
+        "HireDate": "2020-11-23",
+        "Salary": 110443,
+        "Status": "Full-Time"
+    },
+    {
+        "EmployeeID": "EMP0002",
+        "Name": "Employee_2",
+        "Age": 23,
+        "Department": "Engineering",
+        "Position": "Executive",
+        "HireDate": "2020-07-27",
+        "Salary": 105919,
+        "Status": "Contract"
+    },
+    {
+        "EmployeeID": "EMP0003",
+        "Name": "Employee_3",
+        "Age": 42,
+        "Department": "HR",
+        "Position": "Developer",
+        "HireDate": "2018-06-30",
+        "Salary": 135433,
+        "Status": "Full-Time"
+    },
+    {
+        "EmployeeID": "EMP0004",
+        "Name": "Employee_4",
+        "Age": 41,
+        "Department": "Sales",
+        "Position": "Developer",
+        "HireDate": "2016-12-22",
+        "Salary": 90030,
+        "Status": "Full-Time"
+    },
+    {
+        "EmployeeID": "EMP0005",
+        "Name": "Employee_5",
+        "Age": 63,
+        "Department": "HR",
+        "Position": "Manager",
+        "HireDate": "2023-09-21",
+        "Salary": 80267,
+        "Status": "Part-Time"
+    },
+    {
+        "EmployeeID": "EMP0006",
+        "Name": "Employee_6",
+        "Age": 34,
+        "Department": "Finance",
+        "Position": "Executive",
+        "HireDate": "2015-09-28",
+        "Salary": 87067,
+        "Status": "Full-Time"
+    },
+    {
+        "EmployeeID": "EMP0007",
+        "Name": "Employee_7",
+        "Age": 46,
+        "Department": "HR",
+        "Position": "Manager",
+        "HireDate": "2021-09-04",
+        "Salary": 59107,
+        "Status": "Part-Time"
+    },
+    {
+        "EmployeeID": "EMP0008",
+        "Name": "Employee_8",
+        "Age": 36,
+        "Department": "HR",
+        "Position": "Executive",
+        "HireDate": "2023-05-09",
+        "Salary": 65439,
+        "Status": "Contract"
+    },
+    {
+        "EmployeeID": "EMP0009",
+        "Name": "Employee_9",
+        "Age": 26,
+        "Department": "Marketing",
+        "Position": "Analyst",
+        "HireDate": "2019-03-09",
+        "Salary": 137250,
+        "Status": "Full-Time"
+    },
+    {
+        "EmployeeID": "EMP0010",
+        "Name": "Employee_10",
+        "Age": 60,
+        "Department": "Marketing",
+        "Position": "Executive",
+        "HireDate": "2018-04-06",
+        "Salary": 128314,
+        "Status": "Full-Time"
+    },
+    {
+        "EmployeeID": "EMP0011",
+        "Name": "Employee_11",
+        "Age": 33,
+        "Department": "Finance",
+        "Position": "Manager",
+        "HireDate": "2024-09-17",
+        "Salary": 104822,
+        "Status": "Part-Time"
+    },
+    {
+        "EmployeeID": "EMP0012",
+        "Name": "Employee_12",
+        "Age": 60,
+        "Department": "HR",
+        "Position": "Analyst",
+        "HireDate": "2018-07-21",
+        "Salary": 77225,
+        "Status": "Contract"
+    },
+    {
+        "EmployeeID": "EMP0013",
+        "Name": "Employee_13",
+        "Age": 58,
+        "Department": "Engineering",
+        "Position": "Analyst",
+        "HireDate": "2016-07-18",
+        "Salary": 81420,
+        "Status": "Full-Time"
+    },
+    {
+        "EmployeeID": "EMP0014",
+        "Name": "Employee_14",
+        "Age": 51,
+        "Department": "HR",
+        "Position": "Developer",
+        "HireDate": "2016-04-28",
+        "Salary": 74954,
+        "Status": "Part-Time"
+    },
+    {
+        "EmployeeID": "EMP0015",
+        "Name": "Employee_15",
+        "Age": 35,
+        "Department": "Marketing",
+        "Position": "Analyst",
+        "HireDate": "2021-10-29",
+        "Salary": 142209,
+        "Status": "Part-Time"
+    },
+    {
+        "EmployeeID": "EMP0016",
+        "Name": "Employee_16",
+        "Age": 54,
+        "Department": "HR",
+        "Position": "Analyst",
+        "HireDate": "2021-11-26",
+        "Salary": 76897,
+        "Status": "Contract"
+    },
+    {
+        "EmployeeID": "EMP0017",
+        "Name": "Employee_17",
+        "Age": 64,
+        "Department": "HR",
+        "Position": "Developer",
+        "HireDate": "2023-01-15",
+        "Salary": 114305,
+        "Status": "Contract"
+    },
+    {
+        "EmployeeID": "EMP0018",
+        "Name": "Employee_18",
+        "Age": 22,
+        "Department": "HR",
+        "Position": "Analyst",
+        "HireDate": "2017-08-15",
+        "Salary": 131921,
+        "Status": "Part-Time"
+    },
+    {
+        "EmployeeID": "EMP0019",
+        "Name": "Employee_19",
+        "Age": 59,
+        "Department": "Finance",
+        "Position": "Developer",
+        "HireDate": "2022-02-13",
+        "Salary": 129087,
+        "Status": "Part-Time"
+    },
+    {
+        "EmployeeID": "EMP0020",
+        "Name": "Employee_20",
+        "Age": 53,
+        "Department": "HR",
+        "Position": "Manager",
+        "HireDate": "2020-02-27",
+        "Salary": 148102,
+        "Status": "Contract"
+    },
+    {
+        "EmployeeID": "EMP0021",
+        "Name": "Employee_21",
+        "Age": 45,
+        "Department": "Engineering",
+        "Position": "Coordinator",
+        "HireDate": "2019-01-06",
+        "Salary": 77488,
+        "Status": "Part-Time"
+    },
+    {
+        "EmployeeID": "EMP0022",
+        "Name": "Employee_22",
+        "Age": 40,
+        "Department": "Marketing",
+        "Position": "Coordinator",
+        "HireDate": "2019-12-19",
+        "Salary": 82752,
+        "Status": "Contract"
+    },
+    {
+        "EmployeeID": "EMP0023",
+        "Name": "Employee_23",
+        "Age": 39,
+        "Department": "Sales",
+        "Position": "Executive",
+        "HireDate": "2018-03-28",
+        "Salary": 104482,
+        "Status": "Contract"
+    },
+    {
+        "EmployeeID": "EMP0024",
+        "Name": "Employee_24",
+        "Age": 54,
+        "Department": "Sales",
+        "Position": "Manager",
+        "HireDate": "2023-08-08",
+        "Salary": 108257,
+        "Status": "Full-Time"
+    },
+    {
+        "EmployeeID": "EMP0025",
+        "Name": "Employee_25",
+        "Age": 56,
+        "Department": "HR",
+        "Position": "Manager",
+        "HireDate": "2024-01-28",
+        "Salary": 141977,
+        "Status": "Full-Time"
+    }
+]

@@ -4,11 +4,9 @@ import "../styles/CliniciansVisuals.css";
 import Button from "./Button";
 
 function CliniciansVisuals(props) {
-  const [patientData, setPatientData] = useState([]);
-  const [searchTerm, setSearchTerm] = useState(""); // State for the search term
 
-  useEffect(() => {
-    fetch(`http://localhost:3001/api/data/?type=EHR`)
+  React.useEffect(() => {
+    fetch(`http://localhost:3001/api/data/?type=ehr`)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -16,6 +14,33 @@ function CliniciansVisuals(props) {
       })
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
+
+  const [patientData, setPatientData] = React.useState([]);
+
+
+  React.useEffect(() => {
+    fetch(`http://localhost:3001/api/data/?type=mitel`)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setMitelData(data);
+      })
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []);
+
+  const [mitelData, setMitelData] = React.useState([]);
+
+  React.useEffect(() => {
+    fetch(`http://localhost:3001/api/data/?type=quickbooks`)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setQuickBooksData(data);
+      })
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []);
+
+  const [quickBooksData, setQuickBooksData] = React.useState([]);
 
   // Filtered data based on the search term
   const filteredData = patientData.filter((patient) =>
@@ -95,6 +120,7 @@ function CliniciansVisuals(props) {
               textAnchor="middle"
               dominantBaseline="central"
               className="chart-title"
+              fill="#ffffff"
             >
               Patient Diagnoses
             </text>

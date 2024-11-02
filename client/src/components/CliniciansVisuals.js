@@ -17,6 +17,8 @@ function CliniciansVisuals(props) {
 
   const [patientData, setPatientData] = React.useState([]);
 
+  console.log(patientData);
+
 
   React.useEffect(() => {
     fetch(`http://localhost:3001/api/data/?type=mitel`)
@@ -42,13 +44,8 @@ function CliniciansVisuals(props) {
 
   const [quickBooksData, setQuickBooksData] = React.useState([]);
 
-  // Filtered data based on the search term
-  const filteredData = patientData.filter((patient) =>
-    patient.Diagnosis.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
   // Data for the patients count by start visit month and year chart
-  const visitDateCounts = filteredData.reduce((acc, patient) => {
+  const visitDateCounts = patientData.reduce((acc, patient) => {
     const visitDate = new Date(patient.StartVisitDate);
     const monthYear = `${visitDate.getMonth() + 1}/${visitDate.getFullYear()}`;
     acc[monthYear] = (acc[monthYear] || 0) + 1;
@@ -61,7 +58,7 @@ function CliniciansVisuals(props) {
   }));
 
   // Data for the patients count by diagnosis chart
-  const diagnosisCounts = filteredData.reduce((acc, patient) => {
+  const diagnosisCounts = patientData.reduce((acc, patient) => {
     acc[patient.Diagnosis] = (acc[patient.Diagnosis] || 0) + 1;
     return acc;
   }, {});
@@ -74,22 +71,6 @@ function CliniciansVisuals(props) {
   return (
     <div>
       <h1>Patient Data - At a Glance</h1>
-
-      {/* Search bar for filtering */}
-      <div style={{ textAlign: "center", margin: "20px" }}>
-        <input
-          type="text"
-          placeholder="Search by diagnosis"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          style={{
-            padding: "10px",
-            borderRadius: "5px",
-            border: "1px solid #ccc",
-            width: "300px",
-          }}
-        />
-      </div>
 
       <div style={{ display: "flex", justifyContent: "space-around" }}>
         <div style={{ width: "600px" }}>

@@ -19,14 +19,7 @@ const getData = async (req, res) => {
         await client.connect();
         console.log('Connected to MongoDB database');
         const db = client.db(dbName);
-        
-
-
         const type = req.query.type;
-
-        /* error handling */
-
-        if (db.)
 
         /* determine collection */
 
@@ -39,15 +32,8 @@ const getData = async (req, res) => {
 
         const data = await db.collection(collectionName).find({}).toArray();
 
+        res.status(200).json(data);
 
-
-        if (type === 'EHR') {
-            res.status(200).json(data);
-        } else if (type === 'Mytel') {
-            res.send('not implemented yet');
-        } else if (type === 'quickBooks') {
-            res.send('not implemented yet');
-        }
     } catch (err) {
         console.log(err);
         res.status(500).send('An error occurred');

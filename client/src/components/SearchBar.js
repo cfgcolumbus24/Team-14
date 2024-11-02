@@ -1,6 +1,6 @@
 // src/App.js
 import React, { useState } from "react";
-import "../App.css"; // Import your CSS for styling
+import "../styles/CliniciansVisuals.css"; // Import your CSS for styling
 
 function SearchBar() {
   const [searchTerm, setSearchTerm] = useState("");

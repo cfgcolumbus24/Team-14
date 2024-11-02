@@ -5,42 +5,31 @@ import Button from "./Button";
 
 function CliniciansVisuals(props) {
   // Sample data as an array of objects
-  const patientData = [
-    { Diagnosis: "Depression" },
-    { Diagnosis: "Social Anxiety" },
-    { Diagnosis: "Social Anxiety" }, // Replaced Bipolar Disorder
-    { Diagnosis: "PTSD" },
-    { Diagnosis: "OCD" },
-    { Diagnosis: "ADHD" },
-    { Diagnosis: "Depression" },
-    { Diagnosis: "Social Anxiety" },
-    { Diagnosis: "Social Anxiety" }, // Replaced Bipolar Disorder
-    { Diagnosis: "PTSD" },
-    { Diagnosis: "Depression" },
-    { Diagnosis: "Depression" },
-    { Diagnosis: "Social Anxiety" }, // Replaced Bipolar Disorder
-    { Diagnosis: "PTSD" },
-    { Diagnosis: "Social Anxiety" },
-    { Diagnosis: "Depression" },
-    { Diagnosis: "Depression" },
-    { Diagnosis: "OCD" },
-    { Diagnosis: "Depression" },
-    { Diagnosis: "Depression" },
-  ];
 
-  console.log(fetch("http://localhost:3001/api/data"));
+  React.useEffect(() => {
+    fetch(`http://localhost:3001/api/data/?type=EHR`)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setPatientData(data);
+      })
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []);
 
-  const [realData, setRealData] = React.useState([]);
+  const [patientData, setPatientData] = React.useState([]);
 
-  console.log(realData);
+  // Data for the patients count by start visit month and year chart
+  const visitDateCounts = patientData.reduce((acc, patient) => {
+    const visitDate = new Date(patient.StartVisitDate);
+    const monthYear = `${visitDate.getMonth() + 1}/${visitDate.getFullYear()}`;
+    acc[monthYear] = (acc[monthYear] || 0) + 1;
+    return acc;
+  }, {});
 
-  // data for the total patients chart
-  const numPatients = [
-    {
-      name: "Total Patients",
-      count: patientData.length,
-    },
-  ];
+  const visitDateData = Object.keys(visitDateCounts).map((monthYear) => ({
+    name: monthYear,
+    count: visitDateCounts[monthYear],
+  }));
 
   // Data for the patients count by diagnosis chart
   const diagnosisCounts = patientData.reduce((acc, patient) => {
@@ -57,7 +46,16 @@ function CliniciansVisuals(props) {
     <div>
       <h1>Patient Data - At a Glance</h1>
       <div style={{ display: "flex", justifyContent: "space-around" }}>
-        <div>
+        <div style={{ width: "600px" }}>
+          <BarChart width={600} height={300} data={visitDateData}>
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Tooltip />
+            <CartesianGrid strokeDasharray="3 3" />
+            <Bar dataKey="count" fill="#007bff" />
+          </BarChart>
+        </div>
+        <div style={{ width: "600px" }}>
           <BarChart width={600} height={300} data={diagnosisData}>
             <XAxis
               dataKey="name"

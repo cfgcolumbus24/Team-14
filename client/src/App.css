@@ -6,6 +6,7 @@
   margin: 0;
   background-image: linear-gradient(to bottom, #121212, #1f1f1f);
   color: #e0e0e0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .app-header {
@@ -40,8 +41,10 @@ h1 {
 }
 
 .app-main {
-  padding: 40px;
+  padding: 20px; /* Adjust padding if needed */
   flex-grow: 1;
+  max-width: 100%; /* Ensure content fits within the screen */
+  overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
 .app-footer {

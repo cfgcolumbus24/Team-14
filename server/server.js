@@ -20,7 +20,7 @@ app.use('/api/data', dataRouter)
 app.use('/api/data/query', queryRouter);
 
 app.get('/', (req, res) => {
-    res.send('Hello World!');
+    res.send('Data works!');
 });
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);

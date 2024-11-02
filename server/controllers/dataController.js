@@ -6,9 +6,9 @@ const getData = async (req, res) => {
         const type = req.query.type;
         if (type === 'EHR') {
             res.status(200).send(testEHR);
-        } else if (type === 'Mytel') {
+        } else if (type === 'Mitel') {
             res.send('not implemented yet');
-        } else if (type === 'quickBooks') {
+        } else if (type === 'QuickBooks') {
             res.send('not implemented yet');
         }
     } catch (err) {

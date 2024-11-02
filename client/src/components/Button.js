@@ -29,8 +29,7 @@ function Button() {
 
   return (
     <div>
-      <h2>Clinicians Page</h2>
-      <p>Welcome to the Clinicians dashboard section.</p>
+      
 
       {/* Buttons section */}
       <div style={{ marginTop: "20px", textAlign: "center" }}>

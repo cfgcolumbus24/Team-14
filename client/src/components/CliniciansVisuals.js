@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid } from "recharts";
 import "../styles/CliniciansVisuals.css";
 import Button from "./Button";
 
 function CliniciansVisuals(props) {
-  // Sample data as an array of objects
+  const [patientData, setPatientData] = useState([]);
+  const [searchTerm, setSearchTerm] = useState(""); // State for the search term
 
-  React.useEffect(() => {
+  useEffect(() => {
     fetch(`http://localhost:3001/api/data/?type=EHR`)
       .then((response) => response.json())
       .then((data) => {
@@ -16,10 +17,13 @@ function CliniciansVisuals(props) {
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
-  const [patientData, setPatientData] = React.useState([]);
+  // Filtered data based on the search term
+  const filteredData = patientData.filter((patient) =>
+    patient.Diagnosis.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   // Data for the patients count by start visit month and year chart
-  const visitDateCounts = patientData.reduce((acc, patient) => {
+  const visitDateCounts = filteredData.reduce((acc, patient) => {
     const visitDate = new Date(patient.StartVisitDate);
     const monthYear = `${visitDate.getMonth() + 1}/${visitDate.getFullYear()}`;
     acc[monthYear] = (acc[monthYear] || 0) + 1;
@@ -32,7 +36,7 @@ function CliniciansVisuals(props) {
   }));
 
   // Data for the patients count by diagnosis chart
-  const diagnosisCounts = patientData.reduce((acc, patient) => {
+  const diagnosisCounts = filteredData.reduce((acc, patient) => {
     acc[patient.Diagnosis] = (acc[patient.Diagnosis] || 0) + 1;
     return acc;
   }, {});
@@ -45,6 +49,23 @@ function CliniciansVisuals(props) {
   return (
     <div>
       <h1>Patient Data - At a Glance</h1>
+
+      {/* Search bar for filtering */}
+      <div style={{ textAlign: "center", margin: "20px" }}>
+        <input
+          type="text"
+          placeholder="Search by diagnosis"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          style={{
+            padding: "10px",
+            borderRadius: "5px",
+            border: "1px solid #ccc",
+            width: "300px",
+          }}
+        />
+      </div>
+
       <div style={{ display: "flex", justifyContent: "space-around" }}>
         <div style={{ width: "600px" }}>
           <BarChart width={600} height={300} data={visitDateData}>
@@ -68,6 +89,15 @@ function CliniciansVisuals(props) {
             <Tooltip />
             <CartesianGrid strokeDasharray="3 3" />
             <Bar dataKey="count" fill="#007bff" />
+            <text
+              x={300}
+              y={20}
+              textAnchor="middle"
+              dominantBaseline="central"
+              className="chart-title"
+            >
+              Patient Diagnoses
+            </text>
           </BarChart>
         </div>
       </div>

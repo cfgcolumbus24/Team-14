@@ -3,6 +3,7 @@ import "./App.css";
 import Dashboard from "./components/Dashboard";
 import CliniciansVisuals from "./components/CliniciansVisuals";
 import Query from "./components/Query";
+import Button from "./components/Button";
 
 function App() {
   return (

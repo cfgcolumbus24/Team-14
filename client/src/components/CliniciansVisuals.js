@@ -257,6 +257,22 @@ function CliniciansVisuals() {
       Insurance: "Private",
     },
   ];
+
+  React.useEffect(() => {
+    fetch("https://localhost:3001/api/data")
+      .then((response) => response.json())
+      .then((data) => {
+        setRealData(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching patient data:", error);
+      });
+  }, []);
+
+  const [realData, setRealData] = React.useState([]);
+
+  console.log(realData);
+
   // data for the total patients chart
   const numPatients = [
     {
@@ -301,7 +317,6 @@ function CliniciansVisuals() {
         </div>
       </div>
     </div>
-   <Button />
   );
 }
 

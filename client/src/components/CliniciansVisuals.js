@@ -317,7 +317,9 @@ function CliniciansVisuals(props) {
           </BarChart>
         </div>
       </div>
+      <Button />
     </div>
+    
   );
 }
 

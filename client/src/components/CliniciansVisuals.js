@@ -258,16 +258,7 @@ function CliniciansVisuals() {
     },
   ];
 
-  React.useEffect(() => {
-    fetch("https://localhost:3001/api/data")
-      .then((response) => response.json())
-      .then((data) => {
-        setRealData(data);
-      })
-      .catch((error) => {
-        console.error("Error fetching patient data:", error);
-      });
-  }, []);
+  console.log(fetch("http://localhost:3001/api/data"));
 
   const [realData, setRealData] = React.useState([]);
 

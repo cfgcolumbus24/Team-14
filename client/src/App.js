@@ -45,6 +45,7 @@ function App() {
         {/* Conditionally render components based on selected value */}
         {selectedComponent === "Dashboard" && <Dashboard />}
         {selectedComponent === "EHR" && <CliniciansVisuals selectedComponent={selectedComponent}/>}
+        {selectedComponent === "ITAdmin" && <ITAdmin />}
       </main>
       <footer className="app-footer">
         <p>&copy; {new Date().getFullYear()} Netcare Access</p>

@@ -24,7 +24,7 @@ async function checkDatabaseConnection() {
       // Get a reference to the database and a test collection
       const db = client.db(dbName);
       const collection = db.collection('test_collection');
-  
+
       // Insert a temporary test document
       const testDoc = { test: 'ping', timestamp: new Date() };
       const result = await collection.insertOne(testDoc);

@@ -3,20 +3,38 @@ import testEHR from '../../testdata/test_ehr.json' with { type: 'json' };
 import { executeMongoQuery, generateMongoQuery } from "../services/langchain";
 
 const getData = async (req, res) => {
+    const client = new MongoClient(uri);
+
     try {
+        await client.connect();
+        console.log('Connected to MongoDB database');
+        
+        const db = client.db(dbName);
         const type = req.query.type;
-        if (type === 'EHR') {
-            res.status(200).send(testEHR);
-        } else if (type === 'Mytel') {
-            res.send('not implemented yet');
-        } else if (type === 'quickBooks') {
-            res.send('not implemented yet');
+
+        // Determine collection name
+        const collectionName = `${type}_collection`;
+        
+        // Check if the collection exists
+        const collectionExists = await db.listCollections({ name: collectionName }).hasNext();
+        
+        if (!collectionExists) {
+            return res.status(500).json({ error: "Collection not found" });
         }
+
+        // Retrieve data from the existing collection
+        const data = await db.collection(collectionName).find({}).toArray();
+
+        return res.status(200).json(data);
+
     } catch (err) {
-        console.log(err);
-        res.status(500).send('An error occurred');
+        console.error(err);
+        return res.status(500).json({ error: 'An error occurred' });
+    } finally {
+        await client.close();
+        console.log('MongoDB connection closed');
     }
-}
+};
 
 const postQuery = async (req, res) => {
     try{

@@ -46,7 +46,7 @@ h1 {
 }
 
 .app-main {
-  padding: 20px; /* Adjust padding if needed */
+  padding: 0px; /* Adjust padding if needed */
   flex-grow: 1;
   max-width: 100%; /* Ensure content fits within the screen */
   overflow-x: hidden; /* Prevent horizontal overflow */
@@ -62,7 +62,8 @@ h1 {
 
 .dropdown-container {
   text-align: center;
-  margin: 20px;
+  margin-top: 5em;
+  margin-bottom: -5em;
 }
 
 .dropdown-container label {

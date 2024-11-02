@@ -17,9 +17,6 @@ function CliniciansVisuals(props) {
 
   const [patientData, setPatientData] = React.useState([]);
 
-  console.log(patientData);
-
-
   React.useEffect(() => {
     fetch(`http://localhost:3001/api/data/?type=mitel`)
       .then((response) => response.json())
@@ -31,6 +28,7 @@ function CliniciansVisuals(props) {
   }, []);
 
   const [mitelData, setMitelData] = React.useState([]);
+
 
   React.useEffect(() => {
     fetch(`http://localhost:3001/api/data/?type=quickbooks`)

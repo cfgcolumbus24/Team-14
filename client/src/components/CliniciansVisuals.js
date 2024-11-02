@@ -166,20 +166,6 @@ function CliniciansVisuals(props) {
         </div>
       </div>
       <Button />
-      <div style={{ textAlign: "center", margin: "20px" }}>
-        <input
-          type="text"
-          placeholder="Search by diagnosis"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          style={{
-            padding: "10px",
-            borderRadius: "5px",
-            border: "1px solid #ccc",
-            width: "300px",
-          }}
-        />
-      </div>
     </div>
   );
 }

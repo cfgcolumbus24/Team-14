@@ -9,12 +9,14 @@ function CliniciansVisuals(props) {
   const [mitelData, setMitelData] = useState([]);
   const [quickBooksData, setQuickBooksData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [filteredPatientData, setFilteredPatientData] = useState([]);
 
   useEffect(() => {
     fetch(`http://localhost:3001/api/data/?type=ehr`)
       .then((response) => response.json())
       .then((data) => {
         setPatientData(data);
+        setFilteredPatientData(data); // Initialize filtered data with all patient data
       })
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
@@ -37,8 +39,17 @@ function CliniciansVisuals(props) {
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
+  // Search handler
+  const handleSearch = () => {
+    const filteredData = patientData.filter(patient => 
+      patient.ClientName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      patient.Diagnosis.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setFilteredPatientData(filteredData);
+  };
+
   // Data for the patients count by start visit month and year chart
-  const visitDateCounts = patientData.reduce((acc, patient) => {
+  const visitDateCounts = filteredPatientData.reduce((acc, patient) => {
     const visitDate = new Date(patient.StartVisitDate);
     const monthYear = `${visitDate.getMonth() + 1}/${visitDate.getFullYear()}`;
     acc[monthYear] = (acc[monthYear] || 0) + 1;
@@ -51,7 +62,7 @@ function CliniciansVisuals(props) {
   }));
 
   // Data for the patients count by diagnosis chart
-  const diagnosisCounts = patientData.reduce((acc, patient) => {
+  const diagnosisCounts = filteredPatientData.reduce((acc, patient) => {
     acc[patient.Diagnosis] = (acc[patient.Diagnosis] || 0) + 1;
     return acc;
   }, {});

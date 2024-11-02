@@ -10,13 +10,11 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import "../styles/CliniciansVisuals.css";
-import Button from "./Button";
 
 function CliniciansVisuals(props) {
   const [patientData, setPatientData] = useState([]);
   const [mitelData, setMitelData] = useState([]);
   const [quickBooksData, setQuickBooksData] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
   const [filteredPatientData, setFilteredPatientData] = useState([]);
 
   useEffect(() => {
@@ -42,15 +40,6 @@ function CliniciansVisuals(props) {
       .then((data) => setQuickBooksData(data))
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
-
-  const handleSearch = () => {
-    const filteredData = patientData.filter(
-      (patient) =>
-        patient.ClientName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        patient.Diagnosis.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    setFilteredPatientData(filteredData);
-  };
 
   const visitDateData = Object.entries(
     filteredPatientData.reduce((acc, patient) => {

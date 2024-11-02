@@ -32,11 +32,13 @@ const getData = async (req, res) => {
 
         const data = await db.collection(collectionName).find({}).toArray();
 
-        res.status(200).json(data);
-
+        return res.status(200).json(data);
     } catch (err) {
         console.log(err);
-        res.status(500).send('An error occurred');
+        return res.status(500).send('An error occurred');
+    } finally {
+        await client.close();
+        console.log('MongoDB connection closed');
     }
 }
 

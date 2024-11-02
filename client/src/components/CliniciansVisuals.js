@@ -60,7 +60,7 @@ function CliniciansVisuals() {
          <YAxis />
          <Tooltip />
          <CartesianGrid strokeDasharray="3 3" />
-         <Bar dataKey="count" fill="rgba(75, 192, 192, 0.6)" />
+         <Bar dataKey="count" fill="#007bff" />
         </BarChart>
       </div>
       <div style={{ width: "600px" }}>
@@ -69,7 +69,7 @@ function CliniciansVisuals() {
          <YAxis />
          <Tooltip />
          <CartesianGrid strokeDasharray="3 3" />
-         <Bar dataKey="count" fill="rgba(75, 192, 192, 0.6)" />
+         <Bar dataKey="count" fill="#007bff" />
         </BarChart>
       </div>
      </div>

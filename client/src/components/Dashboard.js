@@ -8,6 +8,11 @@ import {
   CartesianGrid,
   Tooltip,
   Label,
+  PieChart,
+  Pie,
+  Cell,
+  Legend,
+  ResponsiveContainer,
 } from "recharts";
 
 function Dashboard() {
@@ -20,31 +25,47 @@ function Dashboard() {
     { name: "65+", count: 150 },
   ];
 
+  const programData = [
+    { name: "ROW One", count: 12721 },
+    { name: "Probate", count: 1338 },
+    { name: "Dev. Disability", count: 1489 },
+    { name: "Forensic", count: 832 },
+    { name: "Comm. Crisis", count: 384 },
+    { name: "Assessments", count: 390 },
+    // { name: "Crisis Stab.", count: 357 },
+    // { name: "Miles House", count: 175 },
+    { name: "Comm. Mobile", count: 574 },
+    // { name: "Outpatient", count: 162 },
+  ];
+
+  const COLORS = [
+    "#007bff", // Blue
+    "#28a745", // Green
+    "#dc3545", // Red
+    "#ffc107", // Yellow
+    "#17a2b8", // Teal
+    "#6f42c1", // Purple
+    "#e83e8c", // Pink
+  ];
+
   return (
     <div className="dashboard-container">
       <h1 className="dashboard-title">Our Impact</h1>
 
       <div className="dashboard-grid">
         {/* Demographics */}
-        <div className="dashboard-card">
+        <div className="dashboard-card-bar">
           <h2>Age Groups Served</h2>
           <div>
-            <BarChart width={600} height={300} data={ageGroupData}>
-              <XAxis dataKey="name">
-                {/* <Label value="Age Group" offset={-10} position="insideBottom" /> */}
-              </XAxis>
-              <YAxis
-              // label={{
-              //   value: "Individuals Served",
-              //   angle: -90,
-              //   position: "centerLeft",
-              //   offset: 500,
-              // }}
-              />
-              <Tooltip />
-              <CartesianGrid strokeDasharray="3 3" />
-              <Bar dataKey="count" fill="#007bff" />
-            </BarChart>
+            <ResponsiveContainer width="100%" height={300}>
+              <BarChart data={ageGroupData}>
+                <XAxis dataKey="name" />
+                <YAxis />
+                <Tooltip />
+                <CartesianGrid strokeDasharray="3 3" />
+                <Bar dataKey="count" fill="#007bff" />
+              </BarChart>
+            </ResponsiveContainer>
           </div>
         </div>
 
@@ -52,14 +73,34 @@ function Dashboard() {
         <div className="dashboard-card">
           <h2>Program Reach</h2>
           <p>
-            <span>Crisis Line:</span> 10,000+ calls answered
+            More than 17,000 individuals received face-to-face services across
+            our programs in 2023.
           </p>
-          <p>
-            <span>Assessments:</span> 5,000+ individuals assessed
-          </p>
-          <p>
-            <span>Residential Services:</span> 200+ beds provided
-          </p>
+          <div style={{ width: "100%", height: 400 }}>
+            <ResponsiveContainer>
+              <PieChart>
+                <Pie
+                  data={programData}
+                  dataKey="count"
+                  nameKey="name"
+                  cx="50%"
+                  cy="50%"
+                  innerRadius={60}
+                  outerRadius={100}
+                  label
+                >
+                  {programData.map((entry, index) => (
+                    <Cell
+                      key={`cell-${index}`}
+                      fill={COLORS[index % COLORS.length]}
+                    />
+                  ))}
+                </Pie>
+                <Tooltip />
+                <Legend />
+              </PieChart>
+            </ResponsiveContainer>
+          </div>
         </div>
 
         {/* Emergency Response */}

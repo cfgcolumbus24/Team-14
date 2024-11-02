@@ -1,18 +1,18 @@
 import express from express;
 
-const getData = (req, res) => {
+const getData = async (req, res) => {
     const {type} = req.body;
     if (type === 'EHR') {
         //res.send('EHR data');
-    } else if (type === 'Phone') {
+    } else if (type === 'Mytel') {
         //res.send('Phone data');
-    } else if (type === 'Financial') {
+    } else if (type === 'quickBooks') {
         //res.send('Phone data');
-    }
+    } else if (type === '')
     res.send('Data route');
 }
 
-const getQuery = (req, res) => {
+const getQuery = async (req, res) => {
     const {type, info} = req.body;
     res.send('Data route');
 }

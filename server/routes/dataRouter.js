@@ -1,12 +1,8 @@
 import express from "express"
-
+import {getData} from "../controllers/dataController"
 const router = express.Router();
 
 /* GET data */
 router.get('/', getData);
-
-router.get('/', getQuery);
-
-
 
 export {router as dataRouter};

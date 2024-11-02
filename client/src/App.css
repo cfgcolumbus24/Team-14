@@ -1,5 +1,5 @@
 .app-container {
-  font-family: sans-serif;
+  font-family: "Roboto", sans-serif;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -7,10 +7,11 @@
 }
 
 .app-header {
-  background-color: #007bff;
+  background-image: linear-gradient(to bottom, #007bff, #0056a3);
   color: white;
   padding: 20px;
   text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .header-content {
@@ -20,22 +21,30 @@
 }
 
 .logo {
-  max-width: 200px;
+  max-width: 150px;
   margin-bottom: 10px;
 }
 
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
 .header-subtitle {
-  font-size: 1.2rem;
+  font-size: 1rem;
+  color: #e0e0e0;
+  margin-top: 5px;
 }
 
 .app-main {
-  padding: 20px;
+  padding: 40px;
   flex-grow: 1;
 }
 
 .app-footer {
-  background-color: #333;
-  color: white;
+  background-color: #222;
+  color: #ccc;
   text-align: center;
   padding: 10px;
+  font-size: 0.9rem;
 }

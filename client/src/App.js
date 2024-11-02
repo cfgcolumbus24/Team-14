@@ -36,7 +36,7 @@ function App() {
         <label htmlFor="component-select">View: </label>
         <select id="component-select" onChange={handleDropdownChange}>
           <option value="Dashboard">Dashboard</option>
-          <option value="CliniciansVisuals">Clinician</option>
+          <option value="EHR">Clinician</option>
           <option value="Button">IT-Admin</option>
         </select>
       </div>
@@ -44,7 +44,7 @@ function App() {
       <main className="app-main">
         {/* Conditionally render components based on selected value */}
         {selectedComponent === "Dashboard" && <Dashboard />}
-        {selectedComponent === "CliniciansVisuals" && <CliniciansVisuals />}
+        {selectedComponent === "EHR" && <CliniciansVisuals selectedComponent={selectedComponent}/>}
       </main>
       <footer className="app-footer">
         <p>&copy; {new Date().getFullYear()} Netcare Access</p>

@@ -3,7 +3,7 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid } from "recharts";
 import "../styles/CliniciansVisuals.css";
 import Button from "./Button";
 
-function CliniciansVisuals() {
+function CliniciansVisuals(props) {
   // Sample data as an array of objects
   const patientData = [
     {

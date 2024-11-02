@@ -30,30 +30,46 @@ function Clinicians() {
     { PatientID: "PAT0024", Age: 88, Gender: "Male", Diagnosis: "COPD", Medication: "Lisinopril", VisitDate: "2024-06-02", LabResult: 144.82, Insurance: "Uninsured" },
     { PatientID: "PAT0025", Age: 31, Gender: "Female", Diagnosis: "Asthma", Medication: "Aspirin", VisitDate: "2024-01-28", LabResult: 63.88, Insurance: "Private" }
   ];
-
-   // Total count of patients
-   const totalPatients = patientData.length;
-
-   // Prepare data for the bar chart
-   const chartData = [
+   // data for the total patients chart
+   const numPatients = [
      {
        name: "Total Patients",
-       count: totalPatients,
+       count: patientData.length,
      },
    ];
+
+  // Data for the patients count by diagnosis chart
+  const diagnosisCounts = patientData.reduce((acc, patient) => {
+    acc[patient.Diagnosis] = (acc[patient.Diagnosis] || 0) + 1;
+    return acc;
+  }, {});
+
+  const diagnosisData = Object.keys(diagnosisCounts).map(diagnosis => ({
+    name: diagnosis,
+    count: diagnosisCounts[diagnosis],
+  }));
  
    return (
      <div>
        <h2>Clinicians Page</h2>
        <p>Welcome to the Clinicians dashboard section.</p>
        <div style={{ width: "600px", margin: "auto" }}>
-         <BarChart width={600} height={300} data={chartData}>
+         <BarChart width={600} height={300} data={numPatients}>
            <XAxis dataKey="name" />
            <YAxis />
            <Tooltip />
            <CartesianGrid strokeDasharray="3 3" />
            <Bar dataKey="count" fill="rgba(75, 192, 192, 0.6)" />
          </BarChart>
+       </div>
+        <div style={{ width: "600px", margin: "auto" }}>
+          <BarChart width={600} height={300} data={diagnosisData}>
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Tooltip />
+            <CartesianGrid strokeDasharray="3 3" />
+            <Bar dataKey="count" fill="rgba(75, 192, 192, 0.6)" />
+          </BarChart>
        </div>
      </div>
    );

@@ -53,7 +53,9 @@ const postQuery = async (req, res) => {
         console.log(mongoQuery)
         const resu = await executeMongoQuery(mongoQuery['collectionName'],mongoQuery['query']);
        
-        const results = await processMongoQuery(resu);
+        const results = await processMongoQuery(resu, query);
+        console.log(results)
+        console.log("Made it")
         return res.status(200).json(results);
     }catch(e){
         return res.status(500).json({error:"Error processing Query"});

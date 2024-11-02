@@ -44,15 +44,16 @@ const messagesInput = [
     },
     {
         role: "system",
-        content: "The sample 'ehr_collection' cluster has the items Gender, StartVisitDate and EndVisitDate. All values start with capital letters. for the query all keys and values need to be in quotes."
+        content: "The sample 'ehr_collection' cluster has the items Gender, Diagnosis, Insurance. All values start with capital letters. for the query all keys and values need to be in quotes."
     }
 ];
 
 const messagesOutput = [
     {
         role: "system", 
-        content: "You are a helpful language parsing assistant. Use the supplied tools to assist the user. You are given an array of json's and an original question. Based on the json objects, answer the question."
+        content: "You are a helpful language parsing assistant. Use the supplied tools to assist the user. You are given an array of json's and an original question. Based on the json objects, answer the question. Assure the answer is short and concise, as if talking to a manager."
     },
+    
 ]
 
 const generateMongoQuery = async(naturalQuery) => {
@@ -100,7 +101,9 @@ const executeMongoQuery = async(collectionName, query) => {
         const newQuery = JSON.parse(query)
         console.log(newQuery)
         const results = await collection.find(newQuery).toArray();
-        return results;
+        const resStrings = results.map(doc => JSON.stringify(doc));
+        console.log(typeof(resStrings))
+        return resStrings.toString();
 
     }catch(e){
         console.error("Error executing MongoDB");
@@ -110,21 +113,26 @@ const executeMongoQuery = async(collectionName, query) => {
     }
 }
 
-const processMongoQuery = async(result) => {
+const processMongoQuery = async(result,question) => {
     
     const openAIClient = new OpenAI({
         apiKey: "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"
     })
     
-    const content = result
+    const content = `Question: ${question}, JSON: ${result}`
     
     messagesOutput.push({role: "user", content})
-    const response = await openAIClient.chat.completions.create({
-        model: "gpt-4o-mini-2024-07-18",
-        messages: messagesOutput,
-    })
-    
-    return response
+    // console.log(messagesOutput)
+    try{
+        const response = await openAIClient.chat.completions.create({
+            model: "gpt-4o-mini-2024-07-18",
+            messages: messagesOutput
+        })
+        return response.choices[0].message.content;
+    }catch(error) {
+        console.error("Error fetching response from OpenAI API:", error);
+        throw error;
+    }    
 }
 
 export {generateMongoQuery, executeMongoQuery, processMongoQuery}

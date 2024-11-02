@@ -22,6 +22,7 @@ function App() {
       <main className="app-main">
         <Dashboard />
         <Clinicians />
+        <Button />
       </main>
       <footer className="app-footer">
         <p>&copy; {new Date().getFullYear()} Netcare Access</p>

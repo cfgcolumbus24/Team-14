@@ -1,61 +1,133 @@
 // src/components/ITAdmin.js
 import React, { useState, useEffect } from "react";
 import Papa from "papaparse";
+import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, PieChart, Pie, Cell } from "recharts";
+import Button from "./Button";
+import "../styles/CliniciansVisuals.css";
 
 function ITAdmin() {
-  const [financialData, setFinancialData] = useState([]);
+
+  const [patientData, setPatientData] = useState([]);
+  const [mitelData, setMitelData] = useState([]);
+  const [quickBooksData, setQuickBooksData] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    // Path to your CSV file
-    const csvFilePath = "/path/to/your/data.csv"; // Ensure the file is accessible in `public` or `src`
-
-    Papa.parse(csvFilePath, {
-      download: true,
-      header: true, // Reads the CSV file's header row
-      complete: (result) => {
-        console.log(result.data); // Inspect parsed data
-        setFinancialData(result.data);
-      },
-      error: (error) => {
-        console.error("Error reading CSV:", error);
-      },
-    });
+    fetch(`http://localhost:3001/api/data/?type=ehr`)
+      .then((response) => response.json())
+      .then((data) => {
+        setPatientData(data);
+      })
+      .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
+  useEffect(() => {
+    fetch(`http://localhost:3001/api/data/?type=mitel`)
+      .then((response) => response.json())
+      .then((data) => {
+        setMitelData(data);
+      })
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []);
+
+  useEffect(() => {
+    fetch(`http://localhost:3001/api/data/?type=quickbooks`)
+      .then((response) => response.json())
+      .then((data) => {
+        setQuickBooksData(data);
+      })
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []);
+
+  // Data for the patients count by start visit month and year chart
+  const visitDateCounts = patientData.reduce((acc, patient) => {
+    const visitDate = new Date(patient.StartVisitDate);
+    const monthYear = `${visitDate.getMonth() + 1}/${visitDate.getFullYear()}`;
+    acc[monthYear] = (acc[monthYear] || 0) + 1;
+    return acc;
+  }, {});
+
+  const visitDateData = Object.keys(visitDateCounts).map((monthYear) => ({
+    name: monthYear,
+    count: visitDateCounts[monthYear],
+  }));
+
+  // Data for the patients count by diagnosis chart
+  const diagnosisCounts = patientData.reduce((acc, patient) => {
+    acc[patient.Diagnosis] = (acc[patient.Diagnosis] || 0) + 1;
+    return acc;
+  }, {});
+
+  const diagnosisData = Object.keys(diagnosisCounts).map((diagnosis) => ({
+    name: diagnosis,
+    count: diagnosisCounts[diagnosis],
+  }));
+
+  // Data for the Mitel calls by issue type chart
+  const issueTypeCounts = mitelData.reduce((acc, call) => {
+    acc[call.IssueType] = (acc[call.IssueType] || 0) + 1;
+    return acc;
+  }, {});
+
+  const issueTypeData = Object.keys(issueTypeCounts).map((issueType) => ({
+    name: issueType,
+    count: issueTypeCounts[issueType],
+  }));
+
+  // Data for the QuickBooks invoices by status chart
+  const invoiceStatusCounts = quickBooksData.reduce((acc, invoice) => {
+    acc[invoice.Status] = (acc[invoice.Status] || 0) + 1;
+    return acc;
+  }, {});
+
+  const invoiceStatusData = Object.keys(invoiceStatusCounts).map((status) => ({
+    name: status,
+    count: invoiceStatusCounts[status],
+  }));
+
+
+
   return (
-    <div>
-      <h1>IT Financial Data</h1>
-      <table style={{ width: "100%", borderCollapse: "collapse" }}>
-        <thead>
-          <tr>
-            <th style={{ border: "1px solid #ddd", padding: "8px" }}>Year</th>
-            <th style={{ border: "1px solid #ddd", padding: "8px" }}>Department</th>
-            <th style={{ border: "1px solid #ddd", padding: "8px" }}>Budget</th>
-            <th style={{ border: "1px solid #ddd", padding: "8px" }}>Expenditure</th>
-            <th style={{ border: "1px solid #ddd", padding: "8px" }}>Variance</th>
-          </tr>
-        </thead>
-        <tbody>
-          {financialData.map((entry, index) => (
-            <tr key={index}>
-              <td style={{ border: "1px solid #ddd", padding: "8px" }}>{entry.year}</td>
-              <td style={{ border: "1px solid #ddd", padding: "8px" }}>{entry.department}</td>
-              <td style={{ border: "1px solid #ddd", padding: "8px" }}>${entry.budget}</td>
-              <td style={{ border: "1px solid #ddd", padding: "8px" }}>${entry.expenditure}</td>
-              <td
-                style={{
-                  border: "1px solid #ddd",
-                  padding: "8px",
-                  color: entry.variance < 0 ? "red" : "green",
-                }}
-              >
-                ${entry.variance}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+      <div className="table-container">
+        <div>
+          <h2>Mitel Calls by Issue Type</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Issue Type</th>
+                <th>Count</th>
+              </tr>
+            </thead>
+            <tbody>
+              {issueTypeData.map((issue) => (
+                <tr key={issue.name}>
+                  <td>{issue.name}</td>
+                  <td>{issue.count}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <h2>Invoices by Status</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Status</th>
+                <th>Count</th>
+              </tr>
+            </thead>
+            <tbody>
+              {invoiceStatusData.map((invoice) => (
+                <tr key={invoice.name}>
+                  <td>{invoice.name}</td>
+                  <td>{invoice.count}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
   );
 }
 

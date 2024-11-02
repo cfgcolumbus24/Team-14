@@ -1,6 +1,7 @@
 import express from "express"
 import testEHR from '../../testdata/test_ehr.json' with { type: 'json' };
 import { executeMongoQuery, generateMongoQuery } from "../services/langchain.js";
+import { MongoClient } from "mongodb";
 
 
 const uri = "mongodb+srv://Victor:user1@reportingdata.t1ydb.mongodb.net/?retryWrites=true&w=majority&appName=ReportingData"

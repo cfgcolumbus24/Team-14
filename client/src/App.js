@@ -2,10 +2,19 @@ import React from "react";
 import "./App.css";
 import Dashboard from "./components/Dashboard";
 import CliniciansVisuals from "./components/CliniciansVisuals";
-import Button from "./components/Button";
+import { useState } from "react";
 import Query from "./components/Query";
+import Button from "./components/Button";
 
 function App() {
+  function App() {
+  // State to manage the selected component
+  const [selectedComponent, setSelectedComponent] = useState("Dashboard");
+
+  // Function to handle dropdown change
+  const handleDropdownChange = (event) => {
+    setSelectedComponent(event.target.value);
+  };
   return (
     <div className="app-container">
       <header className="app-header">
@@ -21,11 +30,22 @@ function App() {
           </p>
         </div>
       </header>
+      <div
+        className="dropdown-container"
+        style={{ textAlign: "center", margin: "20px" }}
+      >
+        <label htmlFor="component-select">Choose a section: </label>
+        <select id="component-select" onChange={handleDropdownChange}>
+          <option value="Dashboard">Dashboard</option>
+          <option value="CliniciansVisuals">Clinicians Visuals</option>
+          <option value="Button">IT-Admin</option>
+        </select>
+      </div>
+
       <main className="app-main">
-        <Dashboard />
-        <CliniciansVisuals />
-        <Button />
-        <Query />
+        {/* Conditionally render components based on selected value */}
+        {selectedComponent === "Dashboard" && <Dashboard />}
+        {selectedComponent === "CliniciansVisuals" && <CliniciansVisuals />}
       </main>
       <footer className="app-footer">
         <p>&copy; {new Date().getFullYear()} Netcare Access</p>
@@ -33,5 +53,6 @@ function App() {
     </div>
   );
 }
-
+}
 export default App;
+

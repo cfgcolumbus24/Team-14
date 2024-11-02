@@ -1,8 +1,8 @@
-import { dataRouter } from './routes/dataRouter';
-import { queryRouter } from './routes/queryRouter';
+import express from "express"
+import dataRouter  from './routes/dataRouter';
+import  queryRouter from './routes/queryRouter';
 
 //set up the express dependency
-const express = require('express');
 
 //create an instance of express
 const app = express();
@@ -11,7 +11,7 @@ const port = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use('/api/data', dataRouter)
-app.use('/api/data/query', e);
+app.use('/api/data/query', queryRouter);
 
 app.get('/', (req, res) => {
     res.send('Hello World!');

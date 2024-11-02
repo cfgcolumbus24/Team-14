@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import Dashboard from "./components/Dashboard";
 import CliniciansVisuals from "./components/CliniciansVisuals";
+import { useState } from "react";
 import Query from "./components/Query";
 
 function App() {

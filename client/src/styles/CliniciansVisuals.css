@@ -104,8 +104,8 @@ p {
 
 .dashboard-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 2fr));
-  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-gap: 50px;
 }
 
 .dashboard-card {
@@ -127,9 +127,11 @@ p {
   display: flex;
   flex-direction: column;
   padding-right: 1em;
+  width: 100%; /* Ensure it takes the full width of the grid column */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
-.dashboard-card:hover {
+.dashboard-card-bar:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
   background-color: #333;

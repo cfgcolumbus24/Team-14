@@ -100,7 +100,7 @@ function CliniciansVisuals(props) {
       <div className="dashboard-grid">
         <div className="dashboard-card-bar">
           <h2>Patient Visits By Date</h2>
-          <BarChart width={600} height={300} data={visitDateData}>
+          <BarChart width={500} height={300} data={visitDateData}>
             <XAxis dataKey="name" />
             <YAxis />
             <Tooltip />
@@ -109,8 +109,9 @@ function CliniciansVisuals(props) {
           </BarChart>
         </div>
         <div className="dashboard-card-bar">
-          <BarChart width={600} height={300} data={diagnosisData}>
-            <XAxis dataKey="name" interval={0} angle={-45} textAnchor="end" height={100} />
+          <h2> Patient Diagnoses</h2>
+          <BarChart width={500} height={300} data={diagnosisData}>
+            <XAxis dataKey="name" interval={0}/>
             <YAxis />
             <Tooltip />
             <CartesianGrid strokeDasharray="3 3" />
@@ -119,7 +120,7 @@ function CliniciansVisuals(props) {
         </div>
         <div className="dashboard-card-bar">
           <h2>Mitel Calls By Issue Type</h2>
-          <BarChart width={600} height={300} data={issueTypeData}>
+          <BarChart width={500} height={300} data={issueTypeData}>
             <XAxis dataKey="name" />
             <YAxis />
             <Tooltip />
@@ -129,7 +130,7 @@ function CliniciansVisuals(props) {
         </div>
         <div className="dashboard-card-bar">
           <h2>QuickBooks Invoices By Status</h2>
-          <BarChart width={600} height={300} data={invoiceStatusData}>
+          <BarChart width={500} height={300} data={invoiceStatusData}>
             <XAxis dataKey="name" />
             <YAxis />
             <Tooltip />

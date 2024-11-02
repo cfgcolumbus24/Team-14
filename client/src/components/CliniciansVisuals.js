@@ -90,7 +90,6 @@ function CliniciansVisuals(props) {
   return (
     <div>
       <h1>Patient Data - At a Glance</h1>
-
       <div style={{ display: "flex", justifyContent: "space-around" }}>
         <div style={{ width: "600px" }}>
           <BarChart width={600} height={300} data={visitDateData}>

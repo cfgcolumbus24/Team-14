@@ -87,3 +87,73 @@ p {
     width: 100% !important; /* Make sure the chart resizes to fit the container */
   }
 }
+
+.dashboard-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dashboard-title {
+  margin-top: 0;
+  text-align: center;
+  margin-bottom: 50px;
+  font-weight: bold;
+  color: #e0e0e0;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 2fr));
+  grid-gap: 20px;
+}
+
+.dashboard-card {
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-card-bar {
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  padding-right: 1em;
+}
+
+.dashboard-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+  background-color: #333;
+}
+
+.dashboard-card h2 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #e0e0e0;
+}
+
+.dashboard-card-bar h2 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #e0e0e0;
+}
+
+.dashboard-card p {
+  font-size: 1rem;
+  color: lightgray;
+  font-weight: normal;
+  margin-bottom: 0;
+  margin-right: 50px;
+  margin-left: 50px;
+}

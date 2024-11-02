@@ -67,16 +67,22 @@ function Dashboard() {
                     <stop offset="100%" stopColor="#00c6ff" stopOpacity={0.8} />
                   </linearGradient>
                 </defs>
-                <XAxis dataKey="name">
+                <XAxis dataKey="name" height={50}>
                   <Label
                     value="Age Group"
-                    offset={-6}
+                    offset={-16}
                     position="bottom"
-                    fontSize={10}
+                    fontSize={20}
+                    height={50}
                   />
                 </XAxis>
                 <YAxis />
-                <Tooltip />
+                <Tooltip
+                  contentStyle={{
+                    backgroundColor: "#ffffff",
+                    color: "#000000",
+                  }}
+                />
                 <CartesianGrid strokeDasharray="3 3" />
                 <Bar dataKey="count" fill="url(#colorAge)" />
               </BarChart>

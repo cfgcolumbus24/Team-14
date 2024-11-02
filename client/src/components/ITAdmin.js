@@ -1,13 +1,23 @@
 // src/components/ITAdmin.js
 import React, { useState, useEffect } from "react";
 import Papa from "papaparse";
-import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, PieChart, Pie, Cell, ResponsiveContainer} from "recharts";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+  CartesianGrid,
+  PieChart,
+  Pie,
+  Cell,
+  ResponsiveContainer,
+} from "recharts";
 import Button from "./Button";
 import "../styles/table.css";
 import "../styles/CliniciansVisuals.css";
 
 function ITAdmin() {
-
   const [patientData, setPatientData] = useState([]);
   const [mitelData, setMitelData] = useState([]);
   const [quickBooksData, setQuickBooksData] = useState([]);
@@ -118,32 +128,19 @@ function ITAdmin() {
   }));
 
   return (
-      <div className="clinicians-visuals__container">
+    <div className="clinicians-visuals__container">
       <h1 className="clinicians-visuals__title">Administrative Data</h1>
       <div className="clinicians-visuals__grid">
-      <div className="clinicians-visuals__card">
-      <h2>QuickBooks Invoices By Status</h2>
-      <ResponsiveContainer width="100%" height={300}>
-        <BarChart data={invoiceStatusData}>
-          <XAxis
-            dataKey="name"
-            interval={0}
-            angle={-45}
-            textAnchor="end"
-            tick={{ fontSize: 12 }}
-            height={100}
-          />
-          <YAxis />
-          <Tooltip />
-          <CartesianGrid strokeDasharray="3 3" />
-          <Bar dataKey="count" fill="#007bff" />
-        </BarChart>
-      </ResponsiveContainer>
-        </div>
         <div className="clinicians-visuals__card">
-          <h2>Mitel Calls By Issue Type</h2>
+          <h2>QuickBooks Invoices By Status</h2>
           <ResponsiveContainer width="100%" height={300}>
-            <BarChart data={issueTypeData}>
+            <BarChart data={invoiceStatusData}>
+              <defs>
+                <linearGradient id="colorQuick" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#007bff" stopOpacity={0.8} />
+                  <stop offset="100%" stopColor="#00c6ff" stopOpacity={0.8} />
+                </linearGradient>
+              </defs>
               <XAxis
                 dataKey="name"
                 interval={0}
@@ -153,51 +150,120 @@ function ITAdmin() {
                 height={100}
               />
               <YAxis />
-              <Tooltip />
+              <Tooltip
+                contentStyle={{
+                  backgroundColor: "#ffffff",
+                  color: "#000000",
+                }}
+              />
               <CartesianGrid strokeDasharray="3 3" />
-              <Bar dataKey="count" fill="#007bff" />
+              <Bar dataKey="count" fill="url(#colorQuick)" />
             </BarChart>
           </ResponsiveContainer>
         </div>
-    <div className="clinicians-visuals__card">
-    <h2>HRIS Data By Department</h2>
-    <ResponsiveContainer width="100%" height={300}>
-      <BarChart data={departmentData}>
-        <XAxis
-          dataKey="name"
-          interval={0}
-          angle={-45}
-          textAnchor="end"
-          tick={{ fontSize: 12 }}
-          height={100}
-        />
-        <YAxis />
-        <Tooltip />
-        <CartesianGrid strokeDasharray="3 3" />
-        <Bar dataKey="count" fill="#007bff" />
-      </BarChart>
-    </ResponsiveContainer>
-  </div>
-  <div className="clinicians-visuals__card">
-    <h2>HRIS Data By Status</h2>
-    <ResponsiveContainer width="100%" height={300}>
-      <BarChart data={statusData}>
-        <XAxis
-          dataKey="name"
-          interval={0}
-          angle={-45}
-          textAnchor="end"
-          tick={{ fontSize: 12 }}
-          height={100}
-        />
-        <YAxis />
-        <Tooltip />
-        <CartesianGrid strokeDasharray="3 3" />
-        <Bar dataKey="count" fill="#007bff" />
-      </BarChart>
-    </ResponsiveContainer>
-  </div>
-    </div>
+        <div className="clinicians-visuals__card">
+          <h2>Mitel Calls By Issue Type</h2>
+          <ResponsiveContainer width="100%" height={300}>
+            <BarChart data={issueTypeData}>
+              <defs>
+                <linearGradient id="colorMitel" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#007bff" stopOpacity={0.8} />
+                  <stop offset="100%" stopColor="#00c6ff" stopOpacity={0.8} />
+                </linearGradient>
+              </defs>
+              <XAxis
+                dataKey="name"
+                interval={0}
+                angle={-45}
+                textAnchor="end"
+                tick={{ fontSize: 12 }}
+                height={100}
+              />
+              <YAxis />
+              <Tooltip
+                contentStyle={{
+                  backgroundColor: "#ffffff",
+                  color: "#000000",
+                }}
+              />
+              <CartesianGrid strokeDasharray="3 3" />
+              <Bar dataKey="count" fill="url(#colorQuick)" />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+        <div className="clinicians-visuals__card">
+          <h2>HRIS Data By Department</h2>
+          <ResponsiveContainer width="100%" height={300}>
+            <BarChart data={departmentData}>
+              <defs>
+                <linearGradient
+                  id="colorHRISDepartment"
+                  x1="0"
+                  y1="0"
+                  x2="0"
+                  y2="1"
+                >
+                  <stop offset="0%" stopColor="#007bff" stopOpacity={0.8} />
+                  <stop offset="100%" stopColor="#00c6ff" stopOpacity={0.8} />
+                </linearGradient>
+              </defs>
+              <XAxis
+                dataKey="name"
+                interval={0}
+                angle={-45}
+                textAnchor="end"
+                tick={{ fontSize: 12 }}
+                height={100}
+              />
+              <YAxis />
+              <Tooltip
+                contentStyle={{
+                  backgroundColor: "#ffffff",
+                  color: "#000000",
+                }}
+              />
+              <CartesianGrid strokeDasharray="3 3" />
+              <Bar dataKey="count" fill="url(#colorHRISDepartment)" />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+        <div className="clinicians-visuals__card">
+          <h2>HRIS Data By Status</h2>
+          <ResponsiveContainer width="100%" height={300}>
+            <BarChart data={statusData}>
+              <defs>
+                <linearGradient
+                  id="colorHRISStatus"
+                  x1="0"
+                  y1="0"
+                  x2="0"
+                  y2="1"
+                >
+                  <stop offset="0%" stopColor="#007bff" stopOpacity={0.8} />
+                  <stop offset="100%" stopColor="#00c6ff" stopOpacity={0.8} />
+                </linearGradient>
+              </defs>
+              <XAxis
+                dataKey="name"
+                interval={0}
+                angle={-45}
+                textAnchor="end"
+                tick={{ fontSize: 12 }}
+                height={100}
+              />
+              <YAxis />
+              <Tooltip
+                contentStyle={{
+                  backgroundColor: "#ffffff",
+                  color: "#000000",
+                }}
+              />
+              <CartesianGrid strokeDasharray="3 3" />
+              <Bar dataKey="count" fill="url(#colorHRISStatus)" />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+      </div>
     </div>
   );
 }

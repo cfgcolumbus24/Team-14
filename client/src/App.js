@@ -31,17 +31,19 @@ function App() {
           </p>
         </div>
       </header>
-      <div
-        className="dropdown-container"
-        style={{ textAlign: "center", margin: "20px" }}
-      >
-        <label htmlFor="component-select">View: </label>
-        <select id="component-select" onChange={handleDropdownChange}>
-          <option value="Dashboard">Dashboard</option>
-          <option value="EHR">Clinician</option>
-          <option value="ITAdmin">Admin</option>
-          <option value="SearchBar">Search Query</option>
-        </select>
+      <div className="dropdown-wrapper">
+        <div
+          className="dropdown-container"
+          style={{ textAlign: "center", margin: "20px" }}
+        >
+          <label htmlFor="component-select">View: </label>
+          <select id="component-select" onChange={handleDropdownChange}>
+            <option value="Dashboard">Impact Report</option>
+            <option value="EHR">Clinician</option>
+            <option value="ITAdmin">Admin</option>
+            <option value="SearchBar">Search Query</option>
+          </select>
+        </div>
       </div>
 
       <main className="app-main">

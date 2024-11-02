@@ -276,26 +276,26 @@ function CliniciansVisuals() {
   }));
 
   return (
-    <div className="dashboard-container">
+    <div>
       <h2>Clinicians Page</h2>
       <p>Welcome to the Clinicians dashboard section.</p>
-      <div className="charts-grid">
-        <div className="chart-box">
+      <div style={{ display: "flex", justifyContent: "space-around" }}>
+        <div style={{ width: "600px" }}>
           <BarChart width={600} height={300} data={numPatients}>
             <XAxis dataKey="name" />
             <YAxis />
             <Tooltip />
             <CartesianGrid strokeDasharray="3 3" />
-            <Bar dataKey="count" fill="rgba(75, 192, 192, 0.6)" />
+            <Bar dataKey="count" fill="#007bff" />
           </BarChart>
         </div>
-        <div className="chart-box">
+        <div style={{ width: "600px" }}>
           <BarChart width={600} height={300} data={diagnosisData}>
             <XAxis dataKey="name" />
             <YAxis />
             <Tooltip />
             <CartesianGrid strokeDasharray="3 3" />
-            <Bar dataKey="count" fill="rgba(75, 192, 192, 0.6)" />
+            <Bar dataKey="count" fill="#007bff" />
           </BarChart>
         </div>
       </div>

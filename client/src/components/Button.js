@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/buttons.css";
 function Button() {
   // Function to handle API call for button clicks
   const handleButtonClick = async (buttonType) => {

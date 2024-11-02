@@ -114,44 +114,6 @@ function CliniciansVisuals(props) {
             </BarChart>
           </ResponsiveContainer>
         </div>
-        <div className="clinicians-visuals__card">
-          <h2>Mitel Calls By Issue Type</h2>
-          <ResponsiveContainer width="100%" height={300}>
-            <BarChart data={issueTypeData}>
-              <XAxis
-                dataKey="name"
-                interval={0}
-                angle={-45}
-                textAnchor="end"
-                tick={{ fontSize: 12 }}
-                height={100}
-              />
-              <YAxis />
-              <Tooltip />
-              <CartesianGrid strokeDasharray="3 3" />
-              <Bar dataKey="count" fill="#007bff" />
-            </BarChart>
-          </ResponsiveContainer>
-        </div>
-        <div className="clinicians-visuals__card">
-          <h2>QuickBooks Invoices By Status</h2>
-          <ResponsiveContainer width="100%" height={300}>
-            <BarChart data={invoiceStatusData}>
-              <XAxis
-                dataKey="name"
-                interval={0}
-                angle={-45}
-                textAnchor="end"
-                tick={{ fontSize: 12 }}
-                height={100}
-              />
-              <YAxis />
-              <Tooltip />
-              <CartesianGrid strokeDasharray="3 3" />
-              <Bar dataKey="count" fill="#007bff" />
-            </BarChart>
-          </ResponsiveContainer>
-        </div>
       </div>
     </div>
   );

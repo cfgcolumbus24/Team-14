@@ -4,7 +4,9 @@ import "../styles/CliniciansVisuals.css"; // Import your CSS for styling
 
 function SearchBar() {
   const [searchTerm, setSearchTerm] = useState("");
-  const [outputText, setOutputText] = useState("Please enter a search term.");
+  const [outputText, setOutputText] = useState(
+    "Please enter a search query, eg: 'How many patients were diagnosed with anxiety in the last month?'"
+  );
 
   // Handle the search submission
   const handleSearch = (e) => {
@@ -12,13 +14,13 @@ function SearchBar() {
     if (searchTerm.trim()) {
       setOutputText(`You searched for: ${searchTerm}`);
     } else {
-      setOutputText("Please enter a valid search term.");
+      setOutputText("Please enter a valid search query.");
     }
   };
 
   return (
     <div className="dashboard-container">
-      <h1 className="dashboard-title">Search Application</h1>
+      <h1 className="dashboard-title">Search Databases</h1>
       <div className="output-area">
         <h2>{outputText}</h2>
       </div>

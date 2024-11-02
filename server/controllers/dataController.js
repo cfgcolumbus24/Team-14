@@ -31,7 +31,7 @@ const getData = async (req, res) => {
         const collectionExists = await db.listCollections({ name: collectionName }).hasNext();
         
         if (!collectionExists) {
-            return res.status(404).json({ error: "Collection not found" });
+            return res.status(500).json({ error: "Collection not found" });
         }
 
         // Retrieve data from the existing collection

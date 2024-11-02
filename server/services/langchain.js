@@ -26,7 +26,7 @@ const tools = [
                     },
                     query:{
                         type:"string",
-                        description: "The query to be executed."
+                        description: "The query to be executed, must be returned in json format."
                     }
                 },
                 required: ["collectionName", "query"]
@@ -39,14 +39,21 @@ const tools = [
 const messagesInput = [
     {
         role: "system", 
-        content: "You are a helpful language parsing assistant. Use the supplied tools to assist the user. In your mongodb database, you have the collections, ehr_collections, hris_collections, mitel_collections, and quickbooks_collections. The ehr relates to patients, Mitel phone numbers and calls. In your response only provide the database query."
+        content: "You are a helpful language parsing assistant. Use the supplied tools to assist the user. In your mongodb database, you have the collections, ehr_collection, hris_collection, mitel_collection, and quickbooks_collection. The ehr relates to patients, Mitel phone numbers and calls. In your response only provide the database query."
         
     },
     {
         role: "system",
-        content: "The sample ehr_collections object has the items StartVisitDate and  EndVisitDate, ."
+        content: "The sample 'ehr_collection' cluster has the items Gender, StartVisitDate and EndVisitDate. All values start with capital letters. for the query all keys and values need to be in quotes."
     }
 ];
+
+const messagesOutput = [
+    {
+        role: "system", 
+        content: "You are a helpful language parsing assistant. Use the supplied tools to assist the user. You are given an array of json's and an original question. Based on the json objects, answer the question."
+    },
+]
 
 const generateMongoQuery = async(naturalQuery) => {
     const openAIClient = new OpenAI({
@@ -66,20 +73,21 @@ const generateMongoQuery = async(naturalQuery) => {
     
     const jsonOutput = response.choices[0].message.tool_calls?.[0].function.arguments
     const ret = JSON.parse(jsonOutput)
+    
     return ret
 }
 
 const executeMongoQuery = async(collectionName, query) => {
-    console.log("0")
+    
     const openAIClient = new OpenAI({
         apiKey: "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"
     })
     const uri = "mongodb+srv://Victor:user1@reportingdata.t1ydb.mongodb.net/?retryWrites=true&w=majority&appName=ReportingData"
     const client = new MongoClient(uri);
     try{
-        console.log("1")
+        
         await client.connect();
-        console.log("2")
+        
         console.log("Connected to Database");
         
         const db = client.db('ReportingData');
@@ -88,6 +96,8 @@ const executeMongoQuery = async(collectionName, query) => {
         console.log("Query before parsing:", query);
         
         console.log(typeof(query))
+        console.log(query)
+        const newQuery = JSON.parse(query)
         console.log(newQuery)
         const results = await collection.find(newQuery).toArray();
         return results;
@@ -100,4 +110,21 @@ const executeMongoQuery = async(collectionName, query) => {
     }
 }
 
-export {generateMongoQuery, executeMongoQuery}
+const processMongoQuery = async(result) => {
+    
+    const openAIClient = new OpenAI({
+        apiKey: "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"
+    })
+    
+    const content = result
+    
+    messagesOutput.push({role: "user", content})
+    const response = await openAIClient.chat.completions.create({
+        model: "gpt-4o-mini-2024-07-18",
+        messages: messagesOutput,
+    })
+    
+    return response
+}
+
+export {generateMongoQuery, executeMongoQuery, processMongoQuery}

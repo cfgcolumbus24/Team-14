@@ -1,6 +1,6 @@
 import express from "express"
 import testEHR from '../../testdata/test_ehr.json' with { type: 'json' };
-import { executeMongoQuery, generateMongoQuery } from "../services/langchain.js";
+import { executeMongoQuery, generateMongoQuery, processMongoQuery } from "../services/langchain.js";
 import { MongoClient } from 'mongodb';
 
 const uri = "mongodb+srv://Victor:user1@reportingdata.t1ydb.mongodb.net/?retryWrites=true&w=majority&appName=ReportingData"
@@ -50,8 +50,10 @@ const postQuery = async (req, res) => {
         }
         
         const mongoQuery = await generateMongoQuery(query);
-        
-        const results = await executeMongoQuery(mongoQuery['collectionName'],mongoQuery['query']);
+        console.log(mongoQuery)
+        const resu = await executeMongoQuery(mongoQuery['collectionName'],mongoQuery['query']);
+       
+        const results = await processMongoQuery(resu);
         return res.status(200).json(results);
     }catch(e){
         return res.status(500).json({error:"Error processing Query"});

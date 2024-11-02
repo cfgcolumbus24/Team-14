@@ -33,10 +33,10 @@ function App() {
         className="dropdown-container"
         style={{ textAlign: "center", margin: "20px" }}
       >
-        <label htmlFor="component-select">Choose a section: </label>
+        <label htmlFor="component-select">View: </label>
         <select id="component-select" onChange={handleDropdownChange}>
           <option value="Dashboard">Dashboard</option>
-          <option value="CliniciansVisuals">Clinicians Visuals</option>
+          <option value="CliniciansVisuals">Clinician</option>
           <option value="Button">IT-Admin</option>
         </select>
       </div>
@@ -53,4 +53,3 @@ function App() {
   );
 }
 export default App;
-

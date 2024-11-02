@@ -1,5 +1,7 @@
 import React from "react";
 import "../styles/Dashboard.css";
+import { useState, useEffect } from "react";
+
 import {
   BarChart,
   Bar,
@@ -112,16 +114,10 @@ function Dashboard() {
 
         {/* Emergency Response */}
         <div className="dashboard-card">
-          <h2>Emergency Response</h2>
-          <p>
-            <span>Calls Handled:</span> 1,500+
-          </p>
-          <p>
-            <span>Response Time:</span> Avg. 10 minutes
-          </p>
-          <p>
-            <span>Success Rate:</span> 95% de-escalation
-          </p>
+          <div className="num">
+            <div className="big-number">{"167,706"}</div>
+            <h2 className="big-number-h2">Calls Handled by ERS Clinicians</h2>
+          </div>
         </div>
       </div>
     </div>

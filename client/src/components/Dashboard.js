@@ -1,24 +1,51 @@
 import React from "react";
 import "../styles/Dashboard.css";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Label,
+} from "recharts";
 
 function Dashboard() {
+  // Sample data for age groups and individuals served
+  const ageGroupData = [
+    { name: "0-18", count: 350 },
+    { name: "19-35", count: 520 },
+    { name: "36-50", count: 480 },
+    { name: "51-65", count: 300 },
+    { name: "65+", count: 150 },
+  ];
+
   return (
     <div className="dashboard-container">
-      <h1 className="dashboard-title">Impact Dashboard</h1>
+      <h1 className="dashboard-title">Our Impact</h1>
 
       <div className="dashboard-grid">
         {/* Demographics */}
         <div className="dashboard-card">
-          <h2>Demographics Served</h2>
-          <p>
-            <span>Age:</span> 25-65 (majority)
-          </p>
-          <p>
-            <span>Gender:</span> 60% Female, 40% Male
-          </p>
-          <p>
-            <span>Ethnicity:</span> Diverse, reflecting Franklin County
-          </p>
+          <h2>Age Groups Served</h2>
+          <div>
+            <BarChart width={600} height={300} data={ageGroupData}>
+              <XAxis dataKey="name">
+                {/* <Label value="Age Group" offset={-10} position="insideBottom" /> */}
+              </XAxis>
+              <YAxis
+              // label={{
+              //   value: "Individuals Served",
+              //   angle: -90,
+              //   position: "centerLeft",
+              //   offset: 500,
+              // }}
+              />
+              <Tooltip />
+              <CartesianGrid strokeDasharray="3 3" />
+              <Bar dataKey="count" fill="#007bff" />
+            </BarChart>
+          </div>
         </div>
 
         {/* Programs and Impact */}

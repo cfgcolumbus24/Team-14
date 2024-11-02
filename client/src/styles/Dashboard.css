@@ -7,38 +7,38 @@
 .dashboard-title {
   margin-top: 0;
   text-align: center;
-  margin-bottom: 20px;
-  font-size: 1.8rem;
+  margin-bottom: 50px;
   font-weight: bold;
-  color: #e0e0e0; /* Light text color */
+  color: #e0e0e0;
 }
 
 .dashboard-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 650px));
   grid-gap: 20px;
 }
 
 .dashboard-card {
-  background-color: #2a2a2a; /* Off-white background for tiles */
-  padding: 20px;
+  background-color: #2a2a2a;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* More prominent shadow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .dashboard-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Stronger shadow on hover */
-  background-color: #333; /* Slightly lighter background on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+  background-color: #333;
 }
 
 .dashboard-card h2 {
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 10px;
-  color: #e0e0e0; /* Light text color */
+  color: #e0e0e0;
 }
 
 .dashboard-card p {

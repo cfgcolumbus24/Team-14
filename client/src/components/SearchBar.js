@@ -1,8 +1,8 @@
 // src/App.js
 import React, { useState } from "react";
-import "./App.css"; // Import your CSS for styling
+import "../App.css"; // Import your CSS for styling
 
-function App() {
+function SearchBar() {
   const [searchTerm, setSearchTerm] = useState("");
   const [outputText, setOutputText] = useState("Please enter a search term.");
 
@@ -36,4 +36,4 @@ function App() {
   );
 }
 
-export default App;
+export default SearchBar;

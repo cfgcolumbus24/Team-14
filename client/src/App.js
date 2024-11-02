@@ -6,6 +6,7 @@ import { useState } from "react";
 import Query from "./components/Query";
 import Button from "./components/Button";
 import ITAdmin from "./components/ITAdmin";
+import SearchBar from "./components/SearchBar";
 
 function App() {
   // State to manage the selected component
@@ -50,7 +51,7 @@ function App() {
           <CliniciansVisuals selectedComponent={selectedComponent} />
         )}
         {selectedComponent === "ITAdmin" && <ITAdmin />}
-        {selectedComponent === "SeaarchBar" && <SearchBar />}
+        {selectedComponent === "SearchBar" && <SearchBar />}
       </main>
       <footer className="app-footer">
         <p>&copy; {new Date().getFullYear()} Netcare Access</p>

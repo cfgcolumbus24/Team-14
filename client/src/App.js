@@ -5,6 +5,14 @@ import CliniciansVisuals from "./components/CliniciansVisuals";
 import Query from "./components/Query";
 
 function App() {
+  function App() {
+  // State to manage the selected component
+  const [selectedComponent, setSelectedComponent] = useState("Dashboard");
+
+  // Function to handle dropdown change
+  const handleDropdownChange = (event) => {
+    setSelectedComponent(event.target.value);
+  };
   return (
     <div className="app-container">
       <header className="app-header">

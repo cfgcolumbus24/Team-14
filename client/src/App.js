@@ -2,10 +2,19 @@ import React from "react";
 import "./App.css";
 import Dashboard from "./components/Dashboard";
 import CliniciansVisuals from "./components/CliniciansVisuals";
+import { useState } from "react";
 import Query from "./components/Query";
 import Button from "./components/Button";
 
 function App() {
+  function App() {
+  // State to manage the selected component
+  const [selectedComponent, setSelectedComponent] = useState("Dashboard");
+
+  // Function to handle dropdown change
+  const handleDropdownChange = (event) => {
+    setSelectedComponent(event.target.value);
+  };
   return (
     <div className="app-container">
       <header className="app-header">

@@ -1,16 +1,17 @@
 // src/components/ITAdmin.js
 import React, { useState, useEffect } from "react";
 import Papa from "papaparse";
-import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, PieChart, Pie, Cell } from "recharts";
+import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, PieChart, Pie, Cell, ResponsiveContainer} from "recharts";
 import Button from "./Button";
 import "../styles/table.css";
+import "../styles/CliniciansVisuals.css";
 
 function ITAdmin() {
 
   const [patientData, setPatientData] = useState([]);
   const [mitelData, setMitelData] = useState([]);
   const [quickBooksData, setQuickBooksData] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
+  const [hrisData, setHrisData] = useState([]);
 
   useEffect(() => {
     fetch(`http://localhost:3001/api/data/?type=ehr`)
@@ -35,6 +36,15 @@ function ITAdmin() {
       .then((response) => response.json())
       .then((data) => {
         setQuickBooksData(data);
+      })
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []);
+
+  useEffect(() => {
+    fetch(`http://localhost:3001/api/data/?type=hris`)
+      .then((response) => response.json())
+      .then((data) => {
+        setHrisData(data);
       })
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
@@ -85,47 +95,110 @@ function ITAdmin() {
     count: invoiceStatusCounts[status],
   }));
 
+  // Data for the HRIS data by department chart
+  const departmentCounts = hrisData.reduce((acc, employee) => {
+    acc[employee.Department] = (acc[employee.Department] || 0) + 1;
+    return acc;
+  }, {});
+
+  const departmentData = Object.keys(departmentCounts).map((department) => ({
+    name: department,
+    count: departmentCounts[department],
+  }));
+
+  // Data for the HRIS data by status chart
+  const statusCounts = hrisData.reduce((acc, employee) => {
+    acc[employee.Status] = (acc[employee.Status] || 0) + 1;
+    return acc;
+  }, {});
+
+  const statusData = Object.keys(statusCounts).map((status) => ({
+    name: status,
+    count: statusCounts[status],
+  }));
+
   return (
-      <div className="table-container">
-        <div>
-          <h2>Mitel Calls by Issue Type</h2>
-          <table>
-            <thead>
-              <tr>
-                <th>Issue Type</th>
-                <th>Count</th>
-              </tr>
-            </thead>
-            <tbody>
-              {issueTypeData.map((issue) => (
-                <tr key={issue.name}>
-                  <td>{issue.name}</td>
-                  <td>{issue.count}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+      <div className="clinicians-visuals__container">
+      <h1 className="clinicians-visuals__title">Administrative Data</h1>
+      <div className="clinicians-visuals__grid">
+      <div className="clinicians-visuals__card">
+      <h2>QuickBooks Invoices By Status</h2>
+      <ResponsiveContainer width="100%" height={300}>
+        <BarChart data={invoiceStatusData}>
+          <XAxis
+            dataKey="name"
+            interval={0}
+            angle={-45}
+            textAnchor="end"
+            tick={{ fontSize: 12 }}
+            height={100}
+          />
+          <YAxis />
+          <Tooltip />
+          <CartesianGrid strokeDasharray="3 3" />
+          <Bar dataKey="count" fill="#007bff" />
+        </BarChart>
+      </ResponsiveContainer>
         </div>
-        <div>
-          <h2>Invoices by Status</h2>
-          <table>
-            <thead>
-              <tr>
-                <th>Status</th>
-                <th>Count</th>
-              </tr>
-            </thead>
-            <tbody>
-              {invoiceStatusData.map((invoice) => (
-                <tr key={invoice.name}>
-                  <td>{invoice.name}</td>
-                  <td>{invoice.count}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className="clinicians-visuals__card">
+          <h2>Mitel Calls By Issue Type</h2>
+          <ResponsiveContainer width="100%" height={300}>
+            <BarChart data={issueTypeData}>
+              <XAxis
+                dataKey="name"
+                interval={0}
+                angle={-45}
+                textAnchor="end"
+                tick={{ fontSize: 12 }}
+                height={100}
+              />
+              <YAxis />
+              <Tooltip />
+              <CartesianGrid strokeDasharray="3 3" />
+              <Bar dataKey="count" fill="#007bff" />
+            </BarChart>
+          </ResponsiveContainer>
         </div>
-      </div>
+    <div className="clinicians-visuals__card">
+    <h2>HRIS Data By Department</h2>
+    <ResponsiveContainer width="100%" height={300}>
+      <BarChart data={departmentData}>
+        <XAxis
+          dataKey="name"
+          interval={0}
+          angle={-45}
+          textAnchor="end"
+          tick={{ fontSize: 12 }}
+          height={100}
+        />
+        <YAxis />
+        <Tooltip />
+        <CartesianGrid strokeDasharray="3 3" />
+        <Bar dataKey="count" fill="#007bff" />
+      </BarChart>
+    </ResponsiveContainer>
+  </div>
+  <div className="clinicians-visuals__card">
+    <h2>HRIS Data By Status</h2>
+    <ResponsiveContainer width="100%" height={300}>
+      <BarChart data={statusData}>
+        <XAxis
+          dataKey="name"
+          interval={0}
+          angle={-45}
+          textAnchor="end"
+          tick={{ fontSize: 12 }}
+          height={100}
+        />
+        <YAxis />
+        <Tooltip />
+        <CartesianGrid strokeDasharray="3 3" />
+        <Bar dataKey="count" fill="#007bff" />
+      </BarChart>
+    </ResponsiveContainer>
+  </div>
+    </div>
+    </div>
   );
 }
 

@@ -39,7 +39,7 @@ function App() {
         <select id="component-select" onChange={handleDropdownChange}>
           <option value="Dashboard">Dashboard</option>
           <option value="EHR">Clinician</option>
-          <option value="ITAdmin">IT-Admin</option>
+          <option value="ITAdmin">Admin</option>
           <option value="SearchBar">Search Query</option>
         </select>
       </div>

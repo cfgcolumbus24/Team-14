@@ -40,7 +40,7 @@ function App() {
           <option value="Dashboard">Dashboard</option>
           <option value="EHR">Clinician</option>
           <option value="ITAdmin">IT-Admin</option>
-          <option value="SearchBar">SearchBar</option>
+          <option value="SearchBar">Search Query</option>
         </select>
       </div>
 

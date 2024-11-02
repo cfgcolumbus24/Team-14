@@ -1,0 +1,252 @@
+[
+    {
+      "CallID": "CALL0001",
+      "CallerAge": 18,
+      "CallerGender": "Female",
+      "CallDate": "2024-02-02",
+      "CallDuration": 30.83,
+      "IssueType": "Anxiety",
+      "Outcome": "Referred",
+      "CounselorID": "COU0001"
+    },
+    {
+      "CallID": "CALL0002",
+      "CallerAge": 73,
+      "CallerGender": "Female",
+      "CallDate": "2024-04-17",
+      "CallDuration": 7.51,
+      "IssueType": "Domestic Violence",
+      "Outcome": "Referred",
+      "CounselorID": "COU0002"
+    },
+    {
+      "CallID": "CALL0003",
+      "CallerAge": 41,
+      "CallerGender": "Female",
+      "CallDate": "2024-11-16",
+      "CallDuration": 45.87,
+      "IssueType": "Anxiety",
+      "Outcome": "Resolved",
+      "CounselorID": "COU0003"
+    },
+    {
+      "CallID": "CALL0004",
+      "CallerAge": 29,
+      "CallerGender": "Non-Binary",
+      "CallDate": "2024-06-29",
+      "CallDuration": 19.45,
+      "IssueType": "Suicidal Ideation",
+      "Outcome": "Referred",
+      "CounselorID": "COU0004"
+    },
+    {
+      "CallID": "CALL0005",
+      "CallerAge": 79,
+      "CallerGender": "Female",
+      "CallDate": "2024-11-10",
+      "CallDuration": 46,
+      "IssueType": "Domestic Violence",
+      "Outcome": "Referred",
+      "CounselorID": "COU0005"
+    },
+    {
+      "CallID": "CALL0006",
+      "CallerAge": 28,
+      "CallerGender": "Non-Binary",
+      "CallDate": "2024-03-07",
+      "CallDuration": 50.72,
+      "IssueType": "Substance Abuse",
+      "Outcome": "Resolved",
+      "CounselorID": "COU0006"
+    },
+    {
+      "CallID": "CALL0007",
+      "CallerAge": 33,
+      "CallerGender": "Female",
+      "CallDate": "2024-01-10",
+      "CallDuration": 25.71,
+      "IssueType": "Anxiety",
+      "Outcome": "Follow-up Needed",
+      "CounselorID": "COU0007"
+    },
+    {
+      "CallID": "CALL0008",
+      "CallerAge": 46,
+      "CallerGender": "Prefer not to say",
+      "CallDate": "2024-09-15",
+      "CallDuration": 19.44,
+      "IssueType": "Domestic Violence",
+      "Outcome": "Follow-up Needed",
+      "CounselorID": "COU0008"
+    },
+    {
+      "CallID": "CALL0009",
+      "CallerAge": 70,
+      "CallerGender": "Non-Binary",
+      "CallDate": "2024-12-05",
+      "CallDuration": 38.62,
+      "IssueType": "Anxiety",
+      "Outcome": "Resolved",
+      "CounselorID": "COU0009"
+    },
+    {
+      "CallID": "CALL0010",
+      "CallerAge": 42,
+      "CallerGender": "Non-Binary",
+      "CallDate": "2024-08-16",
+      "CallDuration": 11.29,
+      "IssueType": "Suicidal Ideation",
+      "Outcome": "Resolved",
+      "CounselorID": "COU0010"
+    },
+    {
+      "CallID": "CALL0011",
+      "CallerAge": 67,
+      "CallerGender": "Male",
+      "CallDate": "2024-08-18",
+      "CallDuration": 54.54,
+      "IssueType": "Substance Abuse",
+      "Outcome": "Resolved",
+      "CounselorID": "COU0011"
+    },
+    {
+      "CallID": "CALL0012",
+      "CallerAge": 38,
+      "CallerGender": "Prefer not to say",
+      "CallDate": "2024-12-23",
+      "CallDuration": 19.53,
+      "IssueType": "Substance Abuse",
+      "Outcome": "Resolved",
+      "CounselorID": "COU0012"
+    },
+    {
+      "CallID": "CALL0013",
+      "CallerAge": 71,
+      "CallerGender": "Male",
+      "CallDate": "2024-01-30",
+      "CallDuration": 47.25,
+      "IssueType": "Anxiety",
+      "Outcome": "Follow-up Needed",
+      "CounselorID": "COU0013"
+    },
+    {
+      "CallID": "CALL0014",
+      "CallerAge": 42,
+      "CallerGender": "Male",
+      "CallDate": "2024-11-27",
+      "CallDuration": 48.27,
+      "IssueType": "Suicidal Ideation",
+      "Outcome": "Follow-up Needed",
+      "CounselorID": "COU0014"
+    },
+    {
+      "CallID": "CALL0015",
+      "CallerAge": 69,
+      "CallerGender": "Male",
+      "CallDate": "2024-12-01",
+      "CallDuration": 6.74,
+      "IssueType": "Mental Health Crisis",
+      "Outcome": "Resolved",
+      "CounselorID": "COU0015"
+    },
+    {
+      "CallID": "CALL0016",
+      "CallerAge": 24,
+      "CallerGender": "Female",
+      "CallDate": "2024-01-29",
+      "CallDuration": 54.49,
+      "IssueType": "Mental Health Crisis",
+      "Outcome": "Referred",
+      "CounselorID": "COU0016"
+    },
+    {
+      "CallID": "CALL0017",
+      "CallerAge": 59,
+      "CallerGender": "Female",
+      "CallDate": "2024-02-09",
+      "CallDuration": 41.36,
+      "IssueType": "Mental Health Crisis",
+      "Outcome": "Resolved",
+      "CounselorID": "COU0017"
+    },
+    {
+      "CallID": "CALL0018",
+      "CallerAge": 69,
+      "CallerGender": "Prefer not to say",
+      "CallDate": "2024-11-04",
+      "CallDuration": 57.99,
+      "IssueType": "Domestic Violence",
+      "Outcome": "Referred",
+      "CounselorID": "COU0018"
+    },
+    {
+      "CallID": "CALL0019",
+      "CallerAge": 24,
+      "CallerGender": "Prefer not to say",
+      "CallDate": "2024-05-04",
+      "CallDuration": 10.88,
+      "IssueType": "Domestic Violence",
+      "Outcome": "Follow-up Needed",
+      "CounselorID": "COU0019"
+    },
+    {
+      "CallID": "CALL0020",
+      "CallerAge": 41,
+      "CallerGender": "Non-Binary",
+      "CallDate": "2024-01-08",
+      "CallDuration": 44.42,
+      "IssueType": "Mental Health Crisis",
+      "Outcome": "Referred",
+      "CounselorID": "COU0020"
+    },
+    {
+      "CallID": "CALL0021",
+      "CallerAge": 73,
+      "CallerGender": "Prefer not to say",
+      "CallDate": "2024-07-19",
+      "CallDuration": 6.68,
+      "IssueType": "Suicidal Ideation",
+      "Outcome": "Resolved",
+      "CounselorID": "COU0021"
+    },
+    {
+      "CallID": "CALL0022",
+      "CallerAge": 47,
+      "CallerGender": "Prefer not to say",
+      "CallDate": "2024-07-17",
+      "CallDuration": 49.06,
+      "IssueType": "Substance Abuse",
+      "Outcome": "Referred",
+      "CounselorID": "COU0022"
+    },
+    {
+      "CallID": "CALL0023",
+      "CallerAge": 78,
+      "CallerGender": "Female",
+      "CallDate": "2024-10-06",
+      "CallDuration": 44.35,
+      "IssueType": "Domestic Violence",
+      "Outcome": "Resolved",
+      "CounselorID": "COU0023"
+    },
+    {
+      "CallID": "CALL0024",
+      "CallerAge": 44,
+      "CallerGender": "Prefer not to say",
+      "CallDate": "2024-01-29",
+      "CallDuration": 54.29,
+      "IssueType": "Anxiety",
+      "Outcome": "Follow-up Needed",
+      "CounselorID": "COU0024"
+    },
+    {
+      "CallID": "CALL0025",
+      "CallerAge": 47,
+      "CallerGender": "Male",
+      "CallDate": "2024-04-20",
+      "CallDuration": 55.78,
+      "IssueType": "Suicidal Ideation",
+      "Outcome": "Referred",
+      "CounselorID": "COU0025"
+    }
+  ]

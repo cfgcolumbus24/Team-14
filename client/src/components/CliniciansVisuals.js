@@ -68,15 +68,6 @@ function CliniciansVisuals(props) {
             <Tooltip />
             <CartesianGrid strokeDasharray="3 3" />
             <Bar dataKey="count" fill="#007bff" />
-            <text
-              x={300}
-              y={20}
-              textAnchor="middle"
-              dominantBaseline="central"
-              className="chart-title"
-            >
-              Patient Diagnoses
-            </text>
           </BarChart>
         </div>
       </div>

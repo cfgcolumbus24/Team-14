@@ -66,17 +66,23 @@ p {
   border-color: #555 !important; /* Lighter tooltip border */
 }
 
-/* Updated Mobile View Adjustments for Clinicians Page */
+/* Mobile View Adjustments for Clinicians Page */
 @media (max-width: 768px) {
   .charts-grid {
     flex-direction: column;
     align-items: center;
-    gap: 15px; /* Reduce space between charts */
+    gap: 15px; /* Reduce the gap between the charts */
   }
 
   .chart-box {
-    max-width: 90%; /* Restrict chart width to prevent overflow */
-    margin: 0 auto 20px; /* Center horizontally and add space below */
-    padding: 15px; /* Adjust padding for better fit */
+    max-width: 100%; /* Use 100% to make the chart box take the full width of the parent */
+    width: 90%; /* Shrink the chart box to 90% of the screen width */
+    margin: 0 auto 20px; /* Center horizontally and add bottom margin */
+    padding: 10px; /* Reduce padding to make more room */
+  }
+
+  /* Ensure Recharts Elements are Responsive */
+  .recharts-wrapper {
+    width: 100% !important; /* Make sure the chart resizes to fit the container */
   }
 }

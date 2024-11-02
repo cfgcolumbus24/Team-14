@@ -136,23 +136,7 @@ function CliniciansVisuals(props) {
             </BarChart>
           </ResponsiveContainer>
         </div>
-      </div>
-      <Button />
-      <div className="clinicians-visuals__search-container">
-        <input
-          type="text"
-          placeholder="Search..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className="clinicians-visuals__search-input"
-        />
-        <button
-          onClick={handleSearch}
-          className="clinicians-visuals__search-button"
-        >
-          Search
-        </button>
-      </div>
+      </div> 
     </div>
   );
 }

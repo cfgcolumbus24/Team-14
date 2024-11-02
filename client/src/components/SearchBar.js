@@ -17,11 +17,12 @@ function App() {
   };
 
   return (
-    <div className="app-container">
+    <div className="dashboard-container">
+      <h1 className="dashboard-title">Search Application</h1>
       <div className="output-area">
         <h2>{outputText}</h2>
       </div>
-      <form onSubmit={handleSearch} className="search-form">
+      <form onSubmit={handleSearch} className="dashboard-card-bar">
         <input
           type="text"
           value={searchTerm}
@@ -36,4 +37,3 @@ function App() {
 }
 
 export default App;
-

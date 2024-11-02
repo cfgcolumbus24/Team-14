@@ -3,7 +3,7 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid } from "recharts";
 import "../styles/CliniciansVisuals.css";
 import Button from "./Button";
 
-function CliniciansVisuals() {
+function CliniciansVisuals(props) {
   // Sample data as an array of objects
   const patientData = [
     {
@@ -259,7 +259,8 @@ function CliniciansVisuals() {
   ];
 
   React.useEffect(() => {
-    fetch("https://localhost:3001/api/data")
+    
+    fetch(`http://localhost:3001/api/data/?type=${props.selectedComponent}`)
       .then((response) => response.json())
       .then((data) => {
         setRealData(data);

@@ -7,7 +7,6 @@ import Query from "./components/Query";
 import Button from "./components/Button";
 
 function App() {
-  function App() {
   // State to manage the selected component
   const [selectedComponent, setSelectedComponent] = useState("Dashboard");
 
@@ -52,7 +51,6 @@ function App() {
       </footer>
     </div>
   );
-}
 }
 export default App;
 

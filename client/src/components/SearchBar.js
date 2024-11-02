@@ -8,14 +8,32 @@ function SearchBar() {
     "Please enter a search query, eg: 'How many patients were diagnosed with anxiety in the last month?'"
   );
 
+  // Function to post JSON to an HTTP API
+  const postSearchQuery = async (query) => {
+    try {
+      const response = await fetch("http://localhost:3001/api/data/query", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({query}),
+      });
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      
+      const data = await response.json();
+      setOutputText(`${JSON.stringify(data)}`);
+    } catch (error) {
+      setOutputText(`Error: ${error.message}`);
+    }
+  };
+  
   // Handle the search submission
   const handleSearch = (e) => {
     e.preventDefault(); // Prevent the default form submission
-    if (searchTerm.trim()) {
-      setOutputText(`You searched for: ${searchTerm}`);
-    } else {
-      setOutputText("Please enter a valid search query.");
-    }
+    postSearchQuery(searchTerm);
   };
 
   return (

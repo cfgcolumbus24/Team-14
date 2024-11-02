@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import Dashboard from "./components/Dashboard";
-import CliniciansVisuals from "./components/Clinicians";
+import CliniciansVisuals from "./components/CliniciansVisuals";
 
 function App() {
   return (

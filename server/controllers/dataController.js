@@ -1,5 +1,5 @@
 import express from "express"
-import testEHR from '../../testdata/test_ehr.json' assert { type: 'json' };
+import testEHR from '../../testdata/test_ehr.json' with { type: 'json' };
 
 const getData = async (req, res) => {
     try {

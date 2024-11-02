@@ -1,4 +1,3 @@
-// src/components/CliniciansVisuals.js
 import React, { useState, useEffect } from "react";
 import {
   BarChart,
@@ -92,7 +91,14 @@ function CliniciansVisuals(props) {
           <h2>Patient Visits By Date</h2>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={visitDateData}>
-              <XAxis dataKey="name" />
+              <XAxis
+                dataKey="name"
+                interval={0}
+                angle={-45}
+                textAnchor="end"
+                tick={{ fontSize: 12 }}
+                height={100}
+              />
               <YAxis />
               <Tooltip />
               <CartesianGrid strokeDasharray="3 3" />
@@ -104,7 +110,14 @@ function CliniciansVisuals(props) {
           <h2>Patient Diagnoses</h2>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={diagnosisData}>
-              <XAxis dataKey="name" interval={0} />
+              <XAxis
+                dataKey="name"
+                interval={0}
+                angle={-45}
+                textAnchor="end"
+                tick={{ fontSize: 12 }}
+                height={100}
+              />
               <YAxis />
               <Tooltip />
               <CartesianGrid strokeDasharray="3 3" />
@@ -116,7 +129,14 @@ function CliniciansVisuals(props) {
           <h2>Mitel Calls By Issue Type</h2>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={issueTypeData}>
-              <XAxis dataKey="name" />
+              <XAxis
+                dataKey="name"
+                interval={0}
+                angle={-45}
+                textAnchor="end"
+                tick={{ fontSize: 12 }}
+                height={100}
+              />
               <YAxis />
               <Tooltip />
               <CartesianGrid strokeDasharray="3 3" />
@@ -128,7 +148,14 @@ function CliniciansVisuals(props) {
           <h2>QuickBooks Invoices By Status</h2>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={invoiceStatusData}>
-              <XAxis dataKey="name" />
+              <XAxis
+                dataKey="name"
+                interval={0}
+                angle={-45}
+                textAnchor="end"
+                tick={{ fontSize: 12 }}
+                height={100}
+              />
               <YAxis />
               <Tooltip />
               <CartesianGrid strokeDasharray="3 3" />
@@ -136,7 +163,7 @@ function CliniciansVisuals(props) {
             </BarChart>
           </ResponsiveContainer>
         </div>
-      </div> 
+      </div>
     </div>
   );
 }

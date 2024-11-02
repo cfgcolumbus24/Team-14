@@ -150,7 +150,12 @@ function ITAdmin() {
                 height={100}
               />
               <YAxis />
-              <Tooltip />
+              <Tooltip
+                contentStyle={{
+                  backgroundColor: "#ffffff",
+                  color: "#000000",
+                }}
+              />
               <CartesianGrid strokeDasharray="3 3" />
               <Bar dataKey="count" fill="url(#colorQuick)" />
             </BarChart>
@@ -175,7 +180,12 @@ function ITAdmin() {
                 height={100}
               />
               <YAxis />
-              <Tooltip />
+              <Tooltip
+                contentStyle={{
+                  backgroundColor: "#ffffff",
+                  color: "#000000",
+                }}
+              />
               <CartesianGrid strokeDasharray="3 3" />
               <Bar dataKey="count" fill="url(#colorQuick)" />
             </BarChart>
@@ -206,7 +216,12 @@ function ITAdmin() {
                 height={100}
               />
               <YAxis />
-              <Tooltip />
+              <Tooltip
+                contentStyle={{
+                  backgroundColor: "#ffffff",
+                  color: "#000000",
+                }}
+              />
               <CartesianGrid strokeDasharray="3 3" />
               <Bar dataKey="count" fill="url(#colorHRISDepartment)" />
             </BarChart>
@@ -237,7 +252,12 @@ function ITAdmin() {
                 height={100}
               />
               <YAxis />
-              <Tooltip />
+              <Tooltip
+                contentStyle={{
+                  backgroundColor: "#ffffff",
+                  color: "#000000",
+                }}
+              />
               <CartesianGrid strokeDasharray="3 3" />
               <Bar dataKey="count" fill="url(#colorHRISStatus)" />
             </BarChart>

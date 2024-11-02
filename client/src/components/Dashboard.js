@@ -77,7 +77,12 @@ function Dashboard() {
                   />
                 </XAxis>
                 <YAxis />
-                <Tooltip />
+                <Tooltip
+                  contentStyle={{
+                    backgroundColor: "#ffffff",
+                    color: "#000000",
+                  }}
+                />
                 <CartesianGrid strokeDasharray="3 3" />
                 <Bar dataKey="count" fill="url(#colorAge)" />
               </BarChart>

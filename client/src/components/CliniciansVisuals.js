@@ -115,7 +115,12 @@ function CliniciansVisuals(props) {
                 height={100}
               />
               <YAxis />
-              <Tooltip />
+              <Tooltip
+                contentStyle={{
+                  backgroundColor: "#ffffff",
+                  color: "#000000",
+                }}
+              />
               <CartesianGrid strokeDasharray="3 3" />
               <Bar dataKey="count" fill="url(#colorVisitDate)" />
             </BarChart>
@@ -140,7 +145,12 @@ function CliniciansVisuals(props) {
                 height={100}
               />
               <YAxis />
-              <Tooltip />
+              <Tooltip
+                contentStyle={{
+                  backgroundColor: "#ffffff",
+                  color: "#000000",
+                }}
+              />
               <CartesianGrid strokeDasharray="3 3" />
               <Bar dataKey="count" fill="url(#colorDiagnosis)" />
             </BarChart>
@@ -193,7 +203,12 @@ function CliniciansVisuals(props) {
                 height={100}
               />
               <YAxis />
-              <Tooltip />
+              <Tooltip
+                contentStyle={{
+                  backgroundColor: "#ffffff",
+                  color: "#000000",
+                }}
+              />
               <CartesianGrid strokeDasharray="3 3" />
               <Bar dataKey="count" fill="url(#colorMeds)" />
             </BarChart>

@@ -4,7 +4,6 @@
   flex-direction: column;
   min-height: 100vh;
   margin: 0;
-  /* Use a subtle dark gradient for the background */
   background-image: linear-gradient(to bottom, #121212, #1f1f1f);
   color: #e0e0e0;
   overflow-x: hidden; /* Prevent horizontal scrolling */
@@ -27,7 +26,6 @@
 .logo {
   max-width: 150px;
   margin-bottom: 10px;
-  /* Consider adding a filter to make the logo stand out against the dark background */
   filter: brightness(1.2);
 }
 
@@ -50,9 +48,44 @@ h1 {
 }
 
 .app-footer {
-  background-color: #1a1a1a; /* Darker footer */
+  background-color: #1a1a1a;
   color: #ccc;
   text-align: center;
   padding: 10px;
   font-size: 0.9rem;
+}
+
+.dropdown-container {
+  text-align: center;
+  margin: 20px;
+}
+
+.dropdown-container label {
+  font-weight: bold;
+  margin-right: 10px;
+  color: #e0e0e0;
+}
+
+.dropdown-container select {
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23e0e0e0'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E"); /* Dropdown arrow icon */
+  background-repeat: no-repeat;
+  background-position: right 10px center; /* Position the icon */
+  padding-right: 50px; /* Add some space for the icon */
+}
+
+.dropdown-container select::-ms-expand {
+  display: none;
+}
+
+.dropdown-container select:hover {
+  background-color: #333;
+  cursor: pointer;
 }

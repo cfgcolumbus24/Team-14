@@ -6,7 +6,7 @@ import Button from "./Button";
 function CliniciansVisuals(props) {
 
   React.useEffect(() => {
-    fetch(`http://localhost:3001/api/data/?type=EHR`)
+    fetch(`http://localhost:3001/api/data/?type=ehr`)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -19,7 +19,7 @@ function CliniciansVisuals(props) {
 
 
   React.useEffect(() => {
-    fetch(`http://localhost:3001/api/data/?type=Mitel`)
+    fetch(`http://localhost:3001/api/data/?type=mitel`)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -31,7 +31,7 @@ function CliniciansVisuals(props) {
   const [mitelData, setMitelData] = React.useState([]);
 
   React.useEffect(() => {
-    fetch(`http://localhost:3001/api/data/?type=QuickBooks`)
+    fetch(`http://localhost:3001/api/data/?type=quickbooks`)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);

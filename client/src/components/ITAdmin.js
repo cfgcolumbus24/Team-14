@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Papa from "papaparse";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, PieChart, Pie, Cell } from "recharts";
 import Button from "./Button";
-import "../styles/CliniciansVisuals.css";
+import "../styles/table.css";
 
 function ITAdmin() {
 

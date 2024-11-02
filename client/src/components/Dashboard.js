@@ -55,11 +55,18 @@ function Dashboard() {
       <div className="dashboard-grid">
         {/* Demographics */}
         <div className="dashboard-card-bar">
-          <h2>Age Groups Served</h2>
+          <h2>Demographics Served</h2>
           <div>
-            <ResponsiveContainer width="100%" height={300}>
+            <ResponsiveContainer width="100%" height={400}>
               <BarChart data={ageGroupData}>
-                <XAxis dataKey="name" />
+                <XAxis dataKey="name">
+                  <Label
+                    value="Age Group"
+                    offset={-6}
+                    position="bottom"
+                    fontSize={10}
+                  />
+                </XAxis>
                 <YAxis />
                 <Tooltip />
                 <CartesianGrid strokeDasharray="3 3" />
@@ -114,20 +121,6 @@ function Dashboard() {
           </p>
           <p>
             <span>Success Rate:</span> 95% de-escalation
-          </p>
-        </div>
-
-        {/* Client Outcomes */}
-        <div className="dashboard-card">
-          <h2>Client Outcomes</h2>
-          <p>
-            <span>Symptom Reduction:</span> 70% reported improvement
-          </p>
-          <p>
-            <span>Hospitalization Reduction:</span> 30% decrease
-          </p>
-          <p>
-            <span>Improved Quality of Life:</span> 80% satisfaction
           </p>
         </div>
       </div>

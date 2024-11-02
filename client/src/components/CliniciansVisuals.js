@@ -85,6 +85,13 @@ function CliniciansVisuals(props) {
     }, {})
   ).map(([name, count]) => ({ name, count }));
 
+  const medicationData = Object.entries(
+    filteredPatientData.reduce((acc, patient) => {
+      acc[patient.Medication] = (acc[patient.Medication] || 0) + 1;
+      return acc;
+    }, {})
+  ).map(([name, count]) => ({ name, count }));
+
   return (
     <div className="clinicians-visuals__container">
       <h1 className="clinicians-visuals__title">Patient Data - At a Glance</h1>
@@ -171,6 +178,25 @@ function CliniciansVisuals(props) {
           <h2>QuickBooks Invoices By Status</h2>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={invoiceStatusData}>
+              <XAxis
+                dataKey="name"
+                interval={0}
+                angle={-45}
+                textAnchor="end"
+                tick={{ fontSize: 12 }}
+                height={100}
+              />
+              <YAxis />
+              <Tooltip />
+              <CartesianGrid strokeDasharray="3 3" />
+              <Bar dataKey="count" fill="#007bff" />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+        <div className="clinicians-visuals__card">
+          <h2>Patient Medications</h2>
+          <ResponsiveContainer width="100%" height={300}>
+            <BarChart data={medicationData}>
               <XAxis
                 dataKey="name"
                 interval={0}
